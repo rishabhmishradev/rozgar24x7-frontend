@@ -25,7 +25,7 @@ const HomePage = () => {
           </p>
 
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
-            Build a Resu <br />
+            Build a Resume <br />
             <span className="text-[#2C4A52]">
               That Actually Gets Selected
             </span>
