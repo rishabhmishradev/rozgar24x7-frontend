@@ -5,6 +5,7 @@ import Layout from "./layout/Layout";
 
 // Pages
 import HomePage from "./pages/HomePage";
+import CustomCursor from "./components/CustomCursor";
 import Features from "./pages/Features";
 import TemplatesPage from "./pages/TemplatesPage";
 import About from "./pages/About";
@@ -16,6 +17,7 @@ import ScrollToTop from "./components/ScrollToTop";
 const App = () => {
   return (
     <>
+    <CustomCursor />
       {/* 🔥 THIS FIXES YOUR BUG */}
       <ScrollToTop />
 

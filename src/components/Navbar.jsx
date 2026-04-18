@@ -27,18 +27,18 @@ const Navbar = () => {
       <div
         className={`flex items-center justify-between w-full max-w-6xl px-6 h-14 rounded-xl border transition ${
           scrolled
-            ? "bg-[#0a0a0a]/80 backdrop-blur-2xl border-white/[0.08] shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
-            : "bg-white/[0.03] backdrop-blur-xl border-white/[0.06]"
+            ? "bg-white/80 backdrop-blur-2xl border-black/[0.08] shadow-[0_10px_40px_rgba(0,0,0,0.1)]"
+            : "bg-black/[0.02] backdrop-blur-xl border-black/[0.06]"
         }`}
       >
 
         {/* LOGO */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-semibold text-sm">
+          <div className="w-8 h-8 rounded-lg bg-black text-white flex items-center justify-center font-semibold text-sm">
             R
           </div>
-          <span className="text-sm text-white font-medium tracking-tight">
-            ROZGAR <span className="text-white/60">24x7</span>
+          <span className="text-sm text-black font-medium tracking-tight">
+            ROZGAR <span className="text-black/60">24x7</span>
           </span>
         </Link>
 
@@ -54,14 +54,14 @@ const Navbar = () => {
                 to={link.to}
                 className={`relative px-3 py-1.5 text-sm transition ${
                   isActive
-                    ? "text-white"
-                    : "text-white/60 hover:text-white"
+                    ? "text-black"
+                    : "text-black/60 hover:text-black"
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-white/[0.08] rounded-md border border-white/[0.1]"
+                    className="absolute inset-0 bg-black/[0.06] rounded-md border border-black/[0.08]"
                   />
                 )}
 
@@ -77,16 +77,16 @@ const Navbar = () => {
 
           <Link
             to="/login"
-            className="px-4 py-1.5 text-sm text-white/70 hover:text-white transition"
+            className="px-4 py-1.5 text-sm text-black/70 hover:text-black transition"
           >
             Sign In
           </Link>
 
-          {/* 🔥 SUBTLE COLOR BUTTON */}
+          {/* 🔥 PREMIUM BUTTON */}
           <Link
             to="/analyze"
             className="px-4 py-1.5 rounded-lg text-sm font-medium text-white 
-            bg-indigo-500/80 hover:bg-indigo-500 transition shadow-[0_0_20px_rgba(99,102,241,0.25)]"
+            bg-black hover:bg-gray-800 transition shadow-[0_10px_25px_rgba(0,0,0,0.15)]"
           >
             Get Started
           </Link>
@@ -94,7 +94,10 @@ const Navbar = () => {
         </div>
 
         {/* MOBILE */}
-        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
+        <button 
+          onClick={() => setMenuOpen(!menuOpen)} 
+          className="md:hidden text-black text-xl"
+        >
           ☰
         </button>
 
@@ -107,7 +110,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-16 w-[95%] bg-[#0a0a0a]/95 backdrop-blur-2xl border border-white/[0.08] rounded-xl p-6 md:hidden"
+            className="absolute top-16 w-[95%] bg-white/95 backdrop-blur-2xl border border-black/[0.08] rounded-xl p-6 md:hidden shadow-lg"
           >
             <div className="flex flex-col gap-4">
 
@@ -116,18 +119,18 @@ const Navbar = () => {
                   key={link.name}
                   to={link.to}
                   onClick={() => setMenuOpen(false)}
-                  className="text-white/70 hover:text-white"
+                  className="text-black/70 hover:text-black"
                 >
                   {link.name}
                 </Link>
               ))}
 
-              <div className="pt-4 border-t border-white/[0.08] flex flex-col gap-3">
-                <Link to="/login" className="text-center py-2 border border-white/[0.1] rounded-lg">
+              <div className="pt-4 border-t border-black/[0.08] flex flex-col gap-3">
+                <Link to="/login" className="text-center py-2 border border-black/[0.1] rounded-lg">
                   Sign In
                 </Link>
 
-                <Link to="/analyze" className="text-center py-2 rounded-lg bg-indigo-500 text-white">
+                <Link to="/analyze" className="text-center py-2 rounded-lg bg-black text-white">
                   Get Started
                 </Link>
               </div>

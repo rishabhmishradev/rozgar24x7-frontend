@@ -40,20 +40,20 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden relative font-[Inter]">
+    <div className="min-h-screen bg-[#f8fafc] text-black overflow-hidden relative font-[Inter]">
 
-      {/* 🔥 SOFT CURSOR LIGHT */}
+      {/* 🔥 CURSOR LIGHT */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-0"
         animate={{ x: pos.x - 120, y: pos.y - 120 }}
         transition={{ type: "spring", stiffness: 80, damping: 20 }}
       >
-        <div className="w-[240px] h-[240px] rounded-full bg-white/[0.04] blur-3xl" />
+        <div className="w-[240px] h-[240px] rounded-full bg-black/[0.05] blur-3xl" />
       </motion.div>
 
-      {/* 🌫️ NOISE + DEPTH */}
+      {/* 🌫️ NOISE */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05]" />
       </div>
 
       {/* ================= HERO ================= */}
@@ -66,30 +66,30 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-gray-500 text-sm mb-3">
+          <p className="text-gray-600 text-sm mb-3">
             AI Resume Optimization
           </p>
 
           <h1 className="text-5xl font-semibold leading-tight mb-6">
             Build a Resume <br />
-            <span className="text-gray-400">
+            <span className="text-gray-700">
               That Gets Selected
             </span>
           </h1>
 
-          <p className="text-gray-500 mb-8 max-w-md">
+          <p className="text-gray-600 mb-8 max-w-md">
             Improve your resume with AI insights, better keywords, and clean formatting.
           </p>
 
           <div className="flex gap-4">
             <Magnetic>
-              <Link className="px-6 py-3 rounded-xl bg-white text-black font-medium hover:scale-105 transition">
+              <Link className="px-6 py-3 rounded-xl bg-black text-white font-medium hover:bg-gray-800 transition">
                 Analyze Resume
               </Link>
             </Magnetic>
 
             <Magnetic>
-              <Link className="px-6 py-3 rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur-xl hover:bg-white/[0.06] transition">
+              <Link className="px-6 py-3 rounded-xl border border-black/10 bg-black/[0.02] backdrop-blur-xl hover:bg-black/[0.06] transition">
                 Templates
               </Link>
             </Magnetic>
@@ -105,24 +105,24 @@ const HomePage = () => {
           <motion.div
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="bg-white/[0.03] backdrop-blur-2xl border border-white/[0.08] shadow-[0_10px_50px_rgba(0,0,0,0.6)] p-6 rounded-2xl w-[340px]"
+            className="bg-black/[0.03] backdrop-blur-2xl border border-black/[0.08] shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-6 rounded-2xl w-[340px]"
           >
-            <p className="text-gray-400 text-sm">ATS Score</p>
+            <p className="text-gray-600 text-sm">ATS Score</p>
             <h2 className="text-4xl font-semibold mb-4">92%</h2>
 
             <div className="space-y-3">
-              <div className="h-1 bg-white/10 rounded">
-                <div className="h-1 bg-white/70 w-[80%] rounded"></div>
+              <div className="h-1 bg-black/10 rounded">
+                <div className="h-1 bg-black/70 w-[80%] rounded"></div>
               </div>
-              <div className="h-1 bg-white/10 rounded">
-                <div className="h-1 bg-white/60 w-[90%] rounded"></div>
+              <div className="h-1 bg-black/10 rounded">
+                <div className="h-1 bg-black/60 w-[90%] rounded"></div>
               </div>
-              <div className="h-1 bg-white/10 rounded">
-                <div className="h-1 bg-white/50 w-[70%] rounded"></div>
+              <div className="h-1 bg-black/10 rounded">
+                <div className="h-1 bg-black/50 w-[70%] rounded"></div>
               </div>
             </div>
 
-            <p className="text-sm text-gray-500 mt-4 leading-relaxed">
+            <p className="text-sm text-gray-600 mt-4 leading-relaxed">
               ✔ Strong keywords <br />
               ✔ Good formatting <br />
               ⚠ Improve verbs
@@ -132,7 +132,7 @@ const HomePage = () => {
       </section>
 
       {/* DIVIDER */}
-      <div className="h-px bg-white/10 mx-16" />
+      <div className="h-px bg-black/10 mx-16" />
 
       {/* ================= FEATURES ================= */}
       <section className="px-6 md:px-16 py-24 grid md:grid-cols-3 gap-8">
@@ -148,10 +148,10 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.6 }}
-            className="bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] p-6 rounded-xl"
+            className="bg-black/[0.02] backdrop-blur-xl border border-black/[0.06] p-6 rounded-xl"
           >
             <h3 className="font-medium mb-2">{item.title}</h3>
-            <p className="text-sm text-gray-500">{item.desc}</p>
+            <p className="text-sm text-gray-600">{item.desc}</p>
           </motion.div>
         ))}
 
@@ -169,7 +169,7 @@ const HomePage = () => {
         </motion.h2>
 
         <Magnetic>
-          <Link className="px-8 py-3 rounded-xl bg-white text-black font-medium hover:scale-105 transition">
+          <Link className="px-8 py-3 rounded-xl bg-black text-white font-medium hover:bg-gray-800 transition">
             Get Started
           </Link>
         </Magnetic>
