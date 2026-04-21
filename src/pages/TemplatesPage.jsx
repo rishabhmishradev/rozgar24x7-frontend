@@ -22,22 +22,22 @@ const TemplatesPage = () => {
 
   return (
     <motion.div
-      className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden relative"
+      className="min-h-screen bg-[#f8fafc] text-black overflow-hidden relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
 
-      {/* 🔥 SOFT CURSOR */}
+      {/* 🔥 CURSOR LIGHT */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-0"
         animate={{ x: pos.x - 120, y: pos.y - 120 }}
       >
-        <div className="w-[240px] h-[240px] bg-white/[0.04] blur-3xl rounded-full" />
+        <div className="w-[240px] h-[240px] bg-black/[0.05] blur-3xl rounded-full" />
       </motion.div>
 
       {/* 🌫️ NOISE */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
       <section className="px-6 md:px-16 py-24 relative z-10">
@@ -47,7 +47,7 @@ const TemplatesPage = () => {
           <h2 className="text-5xl font-semibold mb-3">
             Resume Templates
           </h2>
-          <p className="text-white/70">
+          <p className="text-gray-600">
             Designed to pass ATS and impress recruiters.
           </p>
         </div>
@@ -64,18 +64,18 @@ const TemplatesPage = () => {
               transition={{ delay: i * 0.08 }}
               className={i % 2 === 1 ? "md:mt-10" : ""}
             >
-              <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02}>
+              <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} scale={1.03}>
 
-                <div className="group relative bg-white/[0.05] backdrop-blur-2xl border border-white/[0.1] rounded-2xl p-4 shadow-[0_10px_40px_rgba(0,0,0,0.7)] overflow-hidden cursor-pointer">
+                <div className="group relative bg-black/[0.03] backdrop-blur-2xl border border-black/[0.08] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden">
 
                   {/* IMAGE */}
                   <div className="relative overflow-hidden rounded-lg mb-4">
-                    <div className="h-44 bg-black/40 flex items-center justify-center text-white/40 text-sm">
+                    <div className="h-44 bg-black/[0.04] flex items-center justify-center text-gray-400 text-sm">
                       Preview
                     </div>
 
                     {/* SCORE */}
-                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur px-3 py-1 rounded-full text-xs font-medium border border-white/[0.1]">
+                    <div className="absolute top-3 right-3 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-xs font-medium border border-black/[0.08]">
                       {item.score}% ATS
                     </div>
                   </div>
@@ -85,12 +85,12 @@ const TemplatesPage = () => {
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-white/60 mb-4">
+                  <p className="text-sm text-gray-600 mb-4">
                     {item.category}
                   </p>
 
                   {/* CTA */}
-                  <button className="w-full py-2 rounded-lg bg-white text-black text-sm font-medium hover:scale-[1.03] transition">
+                  <button className="w-full py-2 rounded-lg bg-black text-white text-sm font-medium hover:bg-gray-800 transition">
                     View Template
                   </button>
 

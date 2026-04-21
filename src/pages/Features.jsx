@@ -45,22 +45,22 @@ const Features = () => {
 
   return (
     <motion.div
-      className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden relative"
+      className="min-h-screen bg-[#f8fafc] text-black overflow-hidden relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
 
-      {/* 🔥 SOFT CURSOR LIGHT */}
+      {/* 🔥 CURSOR LIGHT */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-0"
         animate={{ x: pos.x - 120, y: pos.y - 120 }}
       >
-        <div className="w-[240px] h-[240px] bg-white/[0.04] blur-3xl rounded-full" />
+        <div className="w-[240px] h-[240px] bg-black/[0.05] blur-3xl rounded-full" />
       </motion.div>
 
       {/* 🌫️ NOISE */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
       <section className="px-6 md:px-16 py-24 relative z-10">
@@ -70,7 +70,7 @@ const Features = () => {
           <h2 className="text-5xl font-semibold mb-4">
             Powerful Features
           </h2>
-          <p className="text-white/70">
+          <p className="text-gray-600">
             Everything you need to optimize your resume and land interviews.
           </p>
         </div>
@@ -87,7 +87,7 @@ const Features = () => {
               transition={{ delay: i * 0.08 }}
               className={i % 2 === 1 ? "md:mt-10" : ""}
             >
-              <div className="group bg-white/[0.05] backdrop-blur-2xl border border-white/[0.1] p-6 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition">
+              <div className="group bg-black/[0.03] backdrop-blur-2xl border border-black/[0.08] p-6 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition">
 
                 {/* ICON */}
                 <div className="text-2xl mb-4">{item.icon}</div>
@@ -98,7 +98,7 @@ const Features = () => {
                 </h3>
 
                 {/* DESC */}
-                <p className="text-sm text-white/60 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {item.desc}
                 </p>
 
