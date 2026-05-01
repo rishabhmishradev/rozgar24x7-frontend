@@ -158,25 +158,25 @@ const Pricing = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex-1 w-full max-w-md mx-auto bg-slate-900 dark:bg-black border border-slate-800 rounded-[2rem] p-8 shadow-xl flex flex-col relative text-white"
+            className="flex-1 w-full max-w-md mx-auto bg-white dark:bg-[#111] border border-slate-200 dark:border-slate-800 rounded-[2rem] p-8 shadow-xl flex flex-col relative"
           >
             <div className="mb-6">
-              <h2 className="text-2xl font-bold mb-1">Pro Max</h2>
-              <p className="text-sm text-slate-400 font-medium mb-4">Ultimate plan for multiple profiles</p>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Pro Max</h2>
+              <p className="text-sm text-slate-500 font-medium mb-4">Ultimate plan for multiple profiles</p>
               
               <span className="inline-block px-2.5 py-1 bg-[#00b14f]/20 text-[#00b14f] text-xs font-bold rounded mb-4">
                 CUSTOM PLAN
               </span>
               
               <div className="flex items-end gap-2 mb-1">
-                <span className="text-5xl font-extrabold tracking-tighter">
+                <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tighter">
                   ₹{Math.round((resumeCount * 800) * (1 - Math.min((resumeCount - 1) * 0.1, 0.5)))}
                 </span>
                 <span className="text-xl text-red-500 font-bold line-through mb-1">
                   ₹{resumeCount * 3000}
                 </span>
               </div>
-              <p className="text-sm text-slate-400 font-medium">
+              <p className="text-sm text-slate-500 font-medium">
                 {resumeCount > 1 ? `Includes ${Math.min((resumeCount - 1) * 10, 50)}% bulk discount` : "Limited time offer"}
               </p>
             </div>
@@ -189,7 +189,7 @@ const Pricing = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
-                  <span className="text-[15px] font-bold text-white">{resumeCount} Resumes</span>
+                  <span className="text-[15px] font-bold text-slate-900 dark:text-white">{resumeCount} Resumes</span>
                 </li>
                 {[
                   "Get your resume within 24 hrs",
@@ -205,17 +205,17 @@ const Pricing = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                       </svg>
                     </div>
-                    <span className="text-[15px] text-slate-300 font-medium">{feature}</span>
+                    <span className="text-[15px] text-slate-700 dark:text-slate-300 font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="flex items-center gap-3 mt-auto">
-              <div className="flex items-center justify-between bg-slate-800 rounded-xl p-2 w-[120px] border border-slate-700">
-                <button onClick={decrement} className="w-8 h-8 rounded-lg bg-slate-700 hover:bg-slate-600 flex items-center justify-center font-bold text-xl text-white transition-colors">-</button>
-                <span className="font-bold text-lg">{resumeCount}</span>
-                <button onClick={increment} className="w-8 h-8 rounded-lg bg-slate-700 hover:bg-slate-600 flex items-center justify-center font-bold text-xl text-white transition-colors">+</button>
+              <div className="flex items-center justify-between bg-slate-50 dark:bg-slate-800/50 rounded-xl p-2 w-[120px] border border-slate-200 dark:border-slate-700">
+                <button onClick={decrement} className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 flex items-center justify-center font-bold text-xl text-slate-700 dark:text-white transition-colors">-</button>
+                <span className="font-bold text-lg text-slate-900 dark:text-white">{resumeCount}</span>
+                <button onClick={increment} className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 flex items-center justify-center font-bold text-xl text-slate-700 dark:text-white transition-colors">+</button>
               </div>
               <button className="flex-1 py-4 rounded-xl bg-[#00b14f] hover:bg-[#009641] text-white font-bold text-lg transition-colors shadow-md shadow-[#00b14f]/20">
                 Buy Now
