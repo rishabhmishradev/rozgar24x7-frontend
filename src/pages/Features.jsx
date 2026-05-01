@@ -232,31 +232,44 @@ const Features = () => {
           <div className="text-center mb-20">
             <h2 className="text-4xl font-extrabold">Join 50k+ Successful Professionals</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            {[
-              { name: "Sarah Jenkins", company: "Hired at Amazon", quote: "The AI rewriter found the exact words I couldn't. I landed an interview with Amazon within 48 hours of updating my profile." },
-              { name: "Marcus Chen", company: "Hired at Google", quote: "The ATS scanner was a eye-opener. I didn't realize my resume header was unreadable by bots. 10/10 tool." },
-              { name: "Elena Rodriguez", company: "Hired at Netflix", quote: "Editorial patterns are real. The way ROZGAR structures sentences makes you sound like a C-suite executive." }
-            ].map((review, i) => (
-              <div key={i} className="bg-white dark:bg-[#1a1a1a] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-slate-500">
-                    {review.name[0]}
+            <div className="relative flex overflow-hidden w-full py-4 group">
+              <motion.div 
+                className="flex shrink-0 gap-8 w-max group-hover:[animation-play-state:paused]"
+                animate={{ x: ["-50%", "0%"] }}
+                transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+              >
+                {[
+                  { name: "Sarah Jenkins", company: "Hired at Amazon", quote: "The AI rewriter found the exact words I couldn't. I landed an interview with Amazon within 48 hours of updating my profile." },
+                  { name: "Marcus Chen", company: "Hired at Google", quote: "The ATS scanner was a eye-opener. I didn't realize my resume header was unreadable by bots. 10/10 tool." },
+                  { name: "Elena Rodriguez", company: "Hired at Netflix", quote: "Editorial patterns are real. The way ROZGAR structures sentences makes you sound like a C-suite executive." },
+                  { name: "David Kim", company: "Hired at Microsoft", quote: "I struggled to pass the ATS filter for months. ROZGAR 24x7 helped me identify missing keywords and formatting issues." },
+                  { name: "Priya Patel", company: "Hired at Meta", quote: "The 1:1 mentor guidance was phenomenal. They didn't just fix my resume; they helped me build a strategy." },
+                  { name: "James Wilson", company: "Hired at Apple", quote: "Unbelievably simple to use. The instant feedback allowed me to tailor my resume for each application perfectly." },
+                  { name: "Sarah Jenkins", company: "Hired at Amazon", quote: "The AI rewriter found the exact words I couldn't. I landed an interview with Amazon within 48 hours of updating my profile." },
+                  { name: "Marcus Chen", company: "Hired at Google", quote: "The ATS scanner was a eye-opener. I didn't realize my resume header was unreadable by bots. 10/10 tool." },
+                  { name: "Elena Rodriguez", company: "Hired at Netflix", quote: "Editorial patterns are real. The way ROZGAR structures sentences makes you sound like a C-suite executive." },
+                  { name: "David Kim", company: "Hired at Microsoft", quote: "I struggled to pass the ATS filter for months. ROZGAR 24x7 helped me identify missing keywords and formatting issues." },
+                  { name: "Priya Patel", company: "Hired at Meta", quote: "The 1:1 mentor guidance was phenomenal. They didn't just fix my resume; they helped me build a strategy." },
+                  { name: "James Wilson", company: "Hired at Apple", quote: "Unbelievably simple to use. The instant feedback allowed me to tailor my resume for each application perfectly." }
+                ].map((review, i) => (
+                  <div key={i} className="bg-white dark:bg-[#1a1a1a] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800 w-[350px] shrink-0">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-slate-500">
+                        {review.name[0]}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm">{review.name}</h4>
+                        <div className="flex text-amber-400 text-sm">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 italic leading-relaxed">"{review.quote}"</p>
+                    <span className="bg-green-100 dark:bg-[#00b14f]/20 text-[#00b14f] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase">
+                      {review.company}
+                    </span>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-sm">{review.name}</h4>
-                    <div className="flex text-amber-400 text-sm">★★★★★</div>
-                  </div>
-                </div>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 italic leading-relaxed">"{review.quote}"</p>
-                <span className="bg-green-100 dark:bg-[#00b14f]/20 text-[#00b14f] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase">
-                  {review.company}
-                </span>
-              </div>
-            ))}
-
-          </div>
+                ))}
+              </motion.div>
+            </div>
         </div>
       </section >
 
