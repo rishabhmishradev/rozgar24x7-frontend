@@ -167,7 +167,7 @@ const Features = () => {
         {/* Row 3 */}
         < div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center pt-32" >
           <div>
-            <h2 className="text-4xl font-extrabold mb-6">AI Rewriter: Achieve Editorial Excellence.</h2>
+            <h2 className="text-4xl font-extrabold mb-6">Achieve Editorial Excellence.</h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg font-medium mb-8">
               Turn "Responsible for sales" into "Spearheaded high-frequency sales initiatives, resulting in a 40% YoY revenue growth." Our AI understands impact-driven linguistics.
             </p>
