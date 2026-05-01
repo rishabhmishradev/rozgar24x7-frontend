@@ -1,131 +1,100 @@
-import React, { useRef, useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React from "react";
 import { motion } from "framer-motion";
 
 const Support = () => {
-  const form = useRef();
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const move = (e) => setPos({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    form.current.time.value = new Date().toLocaleString();
-
-    emailjs
-      .sendForm(
-        "service_aztije9",
-        "template_b9m45un",
-        form.current,
-        "gAdau_gAMszN0t71t"
-      )
-      .then(() => {
-        alert("Message Sent Successfully!");
-        form.current.reset();
-      })
-      .catch(() => {
-        alert("Something went wrong.");
-      });
-  };
-
   return (
-    <motion.div
-      className="min-h-screen flex justify-center items-center px-4 bg-[#f8fafc] text-black relative overflow-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <div className="min-h-screen relative overflow-hidden pb-32 bg-white dark:bg-[#0a0a0a]">
 
-      {/* 🔥 CURSOR LIGHT */}
-      <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-0"
-        animate={{ x: pos.x - 120, y: pos.y - 120 }}
-      >
-        <div className="w-[240px] h-[240px] bg-black/[0.05] blur-3xl rounded-full" />
-      </motion.div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#00b14f]/5 rounded-full blur-[150px] -z-10" />
 
-      {/* 🌫️ NOISE */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      </div>
-
-      {/* 💎 FORM CARD */}
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className="relative z-10 w-full max-w-lg bg-black/[0.03] backdrop-blur-2xl border border-black/[0.08] p-8 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
-      >
-
-        {/* HEADER */}
-        <div className="text-center mb-8">
-          <p className="text-xs bg-black/[0.05] text-black/70 px-3 py-1 rounded-full inline-block border border-black/[0.08]">
-            Contact Support
-          </p>
-
-          <h1 className="text-4xl font-semibold mt-4">
-            Need Help?
-          </h1>
-
-          <p className="text-gray-600 mt-3 text-sm">
-            Reach out anytime at{" "}
-            <a
-              href="mailto:support@rozgar24x7.com"
-              className="text-black underline"
-            >
-              support@rozgar24x7.com
-            </a>
-          </p>
-        </div>
-
-        {/* FORM */}
-        <div className="space-y-4 text-sm">
-
-          {[
-            { label: "Full Name", name: "user_name", type: "text" },
-            { label: "Email", name: "user_email", type: "email" },
-            { label: "Mobile", name: "user_mobile", type: "tel" },
-          ].map((field, i) => (
-            <div key={i}>
-              <label className="text-gray-600">{field.label}</label>
-              <input
-                type={field.type}
-                name={field.name}
-                required
-                className="w-full mt-1 px-4 py-2 rounded-lg bg-black/[0.04] border border-black/[0.1] outline-none text-black placeholder-black/40 focus:bg-black/[0.06] transition"
-              />
-            </div>
-          ))}
-
-          {/* MESSAGE */}
-          <div>
-            <label className="text-gray-600">Message</label>
-            <textarea
-              name="message"
-              rows="4"
-              required
-              className="w-full mt-1 p-3 rounded-lg bg-black/[0.04] border border-black/[0.1] outline-none resize-none text-black placeholder-black/40 focus:bg-black/[0.06] transition"
-            />
-          </div>
-
-          <input type="hidden" name="time" />
-
-          {/* BUTTON */}
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            className="w-full mt-4 py-3 rounded-lg bg-black text-white font-medium hover:bg-gray-800 transition"
+      <section className="px-6 md:px-16 pt-32 relative z-10 max-w-6xl mx-auto">
+        
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          
+          {/* ================= LEFT SIDE: INFO ================= */}
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex flex-col gap-8"
           >
-            Send Message
-          </motion.button>
+            <div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="inline-block px-4 py-1.5 rounded-full bg-green-50 dark:bg-[#00b14f]/10 text-[#00b14f] font-bold text-sm mb-6"
+              >
+                24/7 Support
+              </motion.div>
+              <h1 className="text-5xl font-extrabold mb-6 text-slate-900 dark:text-white">
+                Get in <span className="text-[#00b14f]">Touch</span>
+              </h1>
+              <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">
+                Have questions about our AI resume builder or need help optimizing your profile? Our team is here to help you succeed.
+              </p>
+            </div>
+
+            <div className="space-y-6 mt-8">
+              <div className="bg-white dark:bg-[#111] border border-slate-100 dark:border-slate-800 p-6 rounded-2xl flex items-center gap-6 group hover:border-[#00b14f]/50 transition-colors shadow-sm">
+                <div className="w-14 h-14 rounded-full bg-green-50 dark:bg-[#00b14f]/10 flex items-center justify-center text-[#00b14f] text-2xl group-hover:scale-110 transition-transform">
+                  📧
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 dark:text-white">Email Us</h4>
+                  <p className="text-slate-600 dark:text-slate-400 font-medium">support@rozgar24x7.com</p>
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-[#111] border border-slate-100 dark:border-slate-800 p-6 rounded-2xl flex items-center gap-6 group hover:border-[#00b14f]/50 transition-colors shadow-sm">
+                <div className="w-14 h-14 rounded-full bg-green-50 dark:bg-[#00b14f]/10 flex items-center justify-center text-[#00b14f] text-2xl group-hover:scale-110 transition-transform">
+                  💬
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 dark:text-white">Live Chat</h4>
+                  <p className="text-slate-600 dark:text-slate-400 font-medium">Available 9am - 6pm EST</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ================= RIGHT SIDE: FORM ================= */}
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="relative"
+          >
+            <form className="glass-card p-10 relative z-10 flex flex-col gap-6">
+              <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Send a Message</h3>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">First Name</label>
+                  <input type="text" className="w-full bg-slate-50 dark:bg-[#0a0a0a] border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00b14f] focus:border-transparent transition-all font-medium" placeholder="John" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">Last Name</label>
+                  <input type="text" className="w-full bg-slate-50 dark:bg-[#0a0a0a] border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00b14f] focus:border-transparent transition-all font-medium" placeholder="Doe" />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-bold text-slate-700 dark:text-slate-300">Email Address</label>
+                <input type="email" className="w-full bg-slate-50 dark:bg-[#0a0a0a] border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00b14f] focus:border-transparent transition-all font-medium" placeholder="john@example.com" />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-bold text-slate-700 dark:text-slate-300">Message</label>
+                <textarea rows="5" className="w-full bg-slate-50 dark:bg-[#0a0a0a] border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00b14f] focus:border-transparent transition-all resize-none font-medium" placeholder="How can we help you?"></textarea>
+              </div>
+
+              <button type="submit" className="w-full mt-4 py-4 rounded-full bg-[#00b14f] hover:bg-[#009641] text-white font-bold text-lg transition-colors shadow-md shadow-[#00b14f]/20">
+                Send Message
+              </button>
+            </form>
+          </motion.div>
 
         </div>
-
-      </form>
-    </motion.div>
+      </section>
+    </div>
   );
 };
 

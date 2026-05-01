@@ -1,47 +1,39 @@
-// src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import Layout from "./layout/Layout";
+import { ThemeProvider } from "./components/ThemeContext";
 
 // Pages
 import HomePage from "./pages/HomePage";
-// import CustomCursor from "./components/CustomCursor";
 import Features from "./pages/Features";
 import TemplatesPage from "./pages/TemplatesPage";
 import About from "./pages/About";
 import Support from "./pages/Support";
+import Pricing from "./pages/Pricing";
 
-// Scroll Fix
+// Components
 import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
-    <>
-    {/* <CustomCursor /> */}
-      {/* THIS FIXES YOUR BUG */}
+    <ThemeProvider>
+
       <ScrollToTop />
 
       <Routes>
         <Route element={<Layout />}>
 
-          {/* Home */}
           <Route path="/" element={<HomePage />} />
-
-          {/* Features */}
           <Route path="/features" element={<Features />} />
-
-          {/* Templates */}
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/templates" element={<TemplatesPage />} />
-
-          {/* About */}
           <Route path="/about" element={<About />} />
-
-          {/* Contact / Support */}
           <Route path="/contact" element={<Support />} />
 
         </Route>
       </Routes>
-    </>
+
+    </ThemeProvider>
   );
 };
 

@@ -2,10 +2,56 @@
 
 @import "tailwindcss";
 
-*{
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    --primary: 0 177 79; /* Bright Green / Emerald #00b14f */
+    --primary-hover: 0 150 65;
+    --bg-color: 255 255 255; /* White */
+    --text-color: 15 23 42; /* Slate 900 */
+    --outline-color: 226 232 240; /* Slate 200 */
+  }
+
+  .dark {
+    --primary: 0 200 90; /* Slightly brighter green for dark mode */
+    --primary-hover: 0 177 79;
+    --bg-color: 10 10 10; /* Neutral 950 */
+    --text-color: 248 250 252; /* Slate 50 */
+    --outline-color: 30 41 59; /* Slate 800 */
+  }
+}
+
+* {
    font-family: "Outfit", sans-serif;
 }
 
 body {
-  /* cursor: none; */
+  @apply bg-white text-slate-900 dark:bg-[#0a0a0a] dark:text-slate-50 transition-colors duration-300;
+}
+
+/* Primary Green Utilities */
+.text-primary {
+  @apply text-[#00b14f] dark:text-[#00c85a];
+}
+
+.bg-primary {
+  @apply bg-[#00b14f] dark:bg-[#00c85a];
+}
+
+.btn-primary {
+  @apply px-6 py-3 rounded-full bg-[#00b14f] hover:bg-[#009641] dark:bg-[#00c85a] dark:hover:bg-[#00b14f] text-white font-medium transition-colors shadow-md shadow-green-500/20 flex items-center justify-center gap-2;
+}
+
+.btn-outline {
+  @apply px-6 py-3 rounded-full border border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-colors flex items-center justify-center gap-2;
+}
+
+/* Glass Utilities (simplified for the new minimalist look) */
+.glass {
+  @apply bg-white/70 dark:bg-black/70 backdrop-blur-md border border-slate-200 dark:border-white/5 shadow-sm;
+}
+
+.glass-card {
+  @apply bg-white dark:bg-[#111] border border-slate-100 dark:border-white/5 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300;
 }
