@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Support from "./pages/Support";
 import Pricing from "./pages/Pricing";
 import AtsAnalysis from "./pages/AtsAnalysis";
+import { Toaster } from "sonner";
 
 // Components
 import ScrollToTop from "./components/ScrollToTop";
@@ -20,6 +21,7 @@ const App = () => {
     <ThemeProvider>
 
       <ScrollToTop />
+      <Toaster position="top-center" richColors />
 
       <Routes>
         <Route element={<Layout />}>
@@ -30,7 +32,7 @@ const App = () => {
           <Route path="/templates" element={<TemplatesPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Support />} />
-          <Route path="/ats-analysis" element={<AtsAnalysis />} />
+          <Route path="/analyze" element={<AtsAnalysis />} />
 
         </Route>
       </Routes>

@@ -501,9 +501,9 @@ const HomePage = () => {
                 Turn "Responsible for sales" into "Spearheaded high-frequency sales initiatives, resulting in a 40% YoY revenue growth." Our AI understands impact-driven linguistics.
               </p>
               <div className="flex items-center gap-8">
-                <button className="px-8 py-3.5 rounded-full font-bold shadow-lg hover:scale-105 transition-transform text-white text-[15px]" style={{ backgroundColor: "#0F172A" }}>
+                <Link to="/analyze" className="px-8 py-3.5 rounded-full font-bold shadow-lg hover:scale-105 transition-transform text-white text-[15px] flex items-center justify-center" style={{ backgroundColor: "#0F172A" }}>
                   Try Rewriter
-                </button>
+                </Link>
                 <button className="flex items-center gap-1.5 font-bold text-[15px] transition-colors" style={{ color: "var(--color-heading)" }}
                   onMouseEnter={e => e.currentTarget.style.color = "var(--color-accent)"}
                   onMouseLeave={e => e.currentTarget.style.color = "var(--color-heading)"}

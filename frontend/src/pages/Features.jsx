@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
@@ -304,12 +305,12 @@ const Features = () => {
           Your Dream Job Is One Resume Away
         </h2>
         <div className="flex flex-col md:flex-row gap-6 relative z-10">
-          <button className="bg-[#00b14f] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#009641] hover:scale-105 transition-all shadow-lg shadow-[#00b14f]/20">
+          <Link to="/analyze" className="bg-[#00b14f] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#009641] hover:scale-105 transition-all shadow-lg shadow-[#00b14f]/20">
             Analyze My Resume
-          </button>
-          <button className="border border-slate-700 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-800 transition-colors">
+          </Link>
+          <Link to="/pricing" className="border border-slate-700 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-800 transition-colors">
             View Pricing
-          </button>
+          </Link>
         </div>
       </section >
 

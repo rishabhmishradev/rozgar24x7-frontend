@@ -7,7 +7,7 @@ import logo from "../assets/logo.PNG";
 const navLinks = [
   { name: "Home", to: "/" },
   { name: "Features", to: "/#features-section" },
-  { name: "ATS Checker", to: "/ats-analysis" },
+  { name: "ATS Checker", to: "/analyze" },
   { name: "Pricing", to: "/pricing" },
 ];
 

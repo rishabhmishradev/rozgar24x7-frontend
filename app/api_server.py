@@ -31,7 +31,7 @@ from app.llm_engine.llm_analysis_engine import LLMAnalysisEngine
 from app.parsing.jd_parser import parse_job_description
 from app.parsing.resume_parser import ParsingError, ResumeParser, SectionError
 from app.parsing.text_extractor import ExtractionError, UnsupportedFileTypeError
-from app.storage.ats_submission_store import AtsSubmissionStore
+from app.storage.ats_submission_store import AtsSubmissionStore, LocalStoredSubmission
 from app.storage.enhancement_submission_store import EnhancementSubmissionStore
 
 
@@ -1565,6 +1565,10 @@ async def analyze_ats_v1(
         )
         if stored_submission is None:
             raise HTTPException(status_code=500, detail="ATS submission storage is not configured")
+
+        # Log storage mode for debugging
+        if isinstance(stored_submission, LocalStoredSubmission):
+            logger.info("ATS submission stored locally: %s", stored_submission.local_path)
 
         return AtsAnalyzeResponse(
             ok=True,

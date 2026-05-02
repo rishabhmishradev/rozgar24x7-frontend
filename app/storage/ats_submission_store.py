@@ -1,10 +1,11 @@
-"""Persist ATS uploads to S3 and DynamoDB."""
+"""Persist ATS uploads to S3 and DynamoDB with filesystem fallback."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import importlib
+import logging
 import mimetypes
 import os
 from pathlib import Path
@@ -18,7 +19,10 @@ _DEFAULT_AWS_REGION = "ap-south-1"
 _DEFAULT_DDB_TABLE = "resume-ats-submission"
 _DEFAULT_S3_BUCKET = "rozgar-uploaded-resume"
 _DEFAULT_S3_PREFIX = "uploads/ats-submissions"
+_DEFAULT_LOCAL_STORAGE_DIR = "ats-local-storage"
 _FILENAME_SANITIZE_RE = re.compile(r"[^A-Za-z0-9._-]+")
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -27,6 +31,18 @@ class StoredSubmission:
     bucket_name: str
     object_key: str
     resume_link: str
+
+    @property
+    def document_link(self) -> str:
+        return self.resume_link
+
+
+@dataclass(frozen=True)
+class LocalStoredSubmission:
+    """Represents a locally stored submission when S3/DynamoDB isn't configured."""
+    submission_id: str
+    local_path: str
+    resume_link: str  # Will be a local file path or placeholder
 
     @property
     def document_link(self) -> str:
@@ -182,9 +198,15 @@ class AtsSubmissionStore:
         target_role: str,
         jd_text: str,
         source: str = "ats_analysis",
-    ) -> StoredSubmission | None:
+    ) -> StoredSubmission | LocalStoredSubmission | None:
+        # Fallback to local filesystem when S3/DynamoDB isn't configured
         if not self.is_configured():
-            return None
+            return self._persist_local_submission(
+                file_path=file_path,
+                original_filename=original_filename,
+                target_role=target_role,
+                jd_text=jd_text,
+            )
 
         timestamp = datetime.now(timezone.utc)
         submission_id = uuid4().hex
@@ -230,6 +252,60 @@ class AtsSubmissionStore:
             bucket_name=self.bucket_name,
             object_key=object_key,
             resume_link=resume_link,
+        )
+
+    def _persist_local_submission(
+        self,
+        *,
+        file_path: Path,
+        original_filename: str,
+        target_role: str,
+        jd_text: str,
+    ) -> LocalStoredSubmission:
+        """Save submission to local filesystem when cloud storage isn't configured."""
+        timestamp = datetime.now(timezone.utc)
+        submission_id = uuid4().hex
+        safe_filename = _sanitize_filename(original_filename)
+
+        # Determine storage directory (relative to app root)
+        app_dir = Path(__file__).resolve().parent.parent
+        storage_dir = app_dir / _DEFAULT_LOCAL_STORAGE_DIR / timestamp.strftime("%Y-%m-%d")
+        storage_dir.mkdir(parents=True, exist_ok=True)
+
+        # Create metadata file alongside the resume
+        local_filename = f"{submission_id}-{safe_filename}"
+        dest_path = storage_dir / local_filename
+
+        # Copy the file to local storage
+        import shutil
+        shutil.copy2(file_path, dest_path)
+
+        # Write metadata file for reference
+        metadata_path = storage_dir / f"{submission_id}-metadata.txt"
+        try:
+            metadata_path.write_text(
+                f"submission_id: {submission_id}\n"
+                f"original_filename: {original_filename}\n"
+                f"target_role: {target_role}\n"
+                f"jd_text: {jd_text[:200]}\n"
+                f"timestamp: {timestamp.isoformat()}\n"
+                f"local_path: {dest_path}\n",
+                encoding="utf-8",
+            )
+        except Exception as e:
+            logger.warning("Failed to write metadata file: %s", e)
+
+        local_link = str(dest_path)
+        logger.info(
+            "ATS submission stored locally: submission_id=%s path=%s",
+            submission_id,
+            local_link,
+        )
+
+        return LocalStoredSubmission(
+            submission_id=submission_id,
+            local_path=str(dest_path),
+            resume_link=local_link,
         )
 
     def _create_s3_client(self) -> Any:
