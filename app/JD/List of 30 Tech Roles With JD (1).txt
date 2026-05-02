@@ -1,0 +1,215 @@
+﻿1.2.1 Data Scientist
+* Job Title Data Scientist / Applied Scientist
+* Professional Summary A highly analytical Data Scientist responsible for extracting actionable insights from complex, high-volume datasets. Expert in applying statistical modeling, machine learning, and predictive analytics to solve business challenges. Skilled in the entire data lifecycle, from exploratory data analysis to deploying models that drive strategic decision-making and product innovation.
+* Core Purpose To transform raw data into sophisticated predictive models and strategic insights that solve complex business problems and identify growth opportunities.
+* Key Responsibilities
+   * Conduct end-to-end exploratory data analysis (EDA) to identify patterns, anomalies, and correlations in large datasets
+   * Design and implement advanced statistical models and machine learning algorithms (regression, clustering, decision trees, etc.)
+   * Develop predictive models to forecast business trends, user behavior, and operational outcomes
+   * Translate complex analytical findings into clear, visual stories for non-technical stakeholders and executives
+   * Design and execute A/B tests and hypothesis testing to validate product features and business strategies
+   * Collaborate with data engineers to ensure high-quality data ingestion and feature engineering
+   * Build and maintain automated dashboards to track model performance and key business metrics
+   * Identify new data sources and methods to improve the accuracy and robustness of existing models
+   * Optimize algorithms for computational efficiency and scalability in production environments
+   * Stay updated with the latest research in statistics and machine learning to maintain a competitive edge
+   * Document all methodologies, assumptions, and validation results for transparency and reproducibility
+   * Participate in cross-functional squads to align data initiatives with product and business roadmaps
+* Technical Skills
+   * Programming Python, R, SQL
+   * Statistics & Math Probability, Hypothesis Testing, Bayesian Statistics, Linear Algebra, Calculus
+   * Machine Learning Supervised/Unsupervised Learning, Ensemble Methods, Time-Series Forecasting
+   * Libraries & Frameworks Pandas, NumPy, Scikit-learn, XGBoost, Statsmodels, PyTorch/TensorFlow
+   * Visualization Tableau, PowerBI, Matplotlib, Seaborn, Plotly
+   * Big Data Tools Spark (PySpark), Hive, Google BigQuery
+   * Core Concepts Feature Engineering, Dimensionality Reduction, Bias-Variance Tradeoff, Cross-Validation
+* Qualifications
+   * Bachelor’s or Master’s degree in Data Science, Statistics, Mathematics, Computer Science, or a related quantitative field
+   * Proven experience in building and deploying machine learning models at scale
+   * Strong proficiency in Python and advanced SQL for data manipulation
+   * Deep understanding of statistical significance and experimental design
+   * Hands-on experience with data visualization and storytelling
+* Preferred Qualifications
+   * PhD in a quantitative field with a focus on machine learning or statistics
+   * Experience with cloud-based machine learning platforms (AWS SageMaker, Azure ML)
+   * Knowledge of deep learning architectures for specialized data types (NLP/CV)
+   * Exposure to MLOps for model versioning and monitoring
+* Key Deliverables
+   * Predictive models and algorithms integrated into business workflows
+   * Comprehensive analytical reports and executive-level presentations
+   * Validated experiment results and data-driven product recommendations
+   * Automated insight dashboards and performance monitoring systems
+________________
+
+
+1.2.2 Data Engineer
+* Job Title Data Engineer / Data Infrastructure Engineer
+* Professional Summary A robust Data Engineer responsible for designing, building, and maintaining the scalable infrastructure required for optimal data extraction, transformation, and loading (ETL). Expert in constructing high-performance data pipelines and managing distributed systems that ensure data is clean, accessible, and secure for data scientists and analysts across the organization.
+* Core Purpose To build and manage the heavy-duty data architecture and pipelines that ensure the reliable flow of high-quality data across the enterprise.
+* Key Responsibilities
+   * Design, construct, and manage scalable ETL/ELT pipelines to move data from various sources to data warehouses
+   * Build and maintain high-performance data architectures, including data lakes and warehouses (Snowflake, Redshift, BigQuery)
+   * Develop custom code in Python, Java, or Scala to handle complex data transformations and stream processing
+   * Optimize data storage and query performance to ensure fast access for downstream users
+   * Implement data quality checks and automated validation scripts to ensure the integrity of the data ecosystem
+   * Collaborate with data scientists to architect data features and specialized datasets for model training
+   * Manage and orchestrate complex workflows using tools like Apache Airflow or Dagster
+   * Ensure data security and compliance with privacy regulations (GDPR/CCPA) through encryption and access controls
+   * Monitor pipeline health, troubleshoot failures, and implement self-healing mechanisms
+   * Evaluate and integrate new big data technologies to improve system reliability and cost-efficiency
+   * Work with DevOps teams to deploy data infrastructure using Infrastructure-as-Code (Terraform/CloudFormation)
+   * Document data lineage, schemas, and pipeline architectures for organizational transparency
+* Technical Skills
+   * Programming Python, SQL (Expert), Java, Scala
+   * Big Data Frameworks Apache Spark, Flink, Hadoop, Kafka
+   * Data Warehousing Snowflake, Amazon Redshift, Google BigQuery, Databricks
+   * Orchestration Airflow, Prefect, Luigi
+   * Database Systems PostgreSQL, MongoDB, Cassandra, DynamoDB
+   * Cloud Platforms AWS (Glue, Kinesis, S3), GCP (Dataflow, Pub/Sub), Azure
+   * Core Concepts Data Modeling, ETL/ELT, Distributed Computing, Stream Processing, CI/CD
+* Qualifications
+   * Bachelor’s degree in Computer Science, Information Technology, or a related engineering field
+   * Strong experience in building and optimizing "big data" data pipelines and architectures
+   * Expert-level SQL knowledge and experience working with relational and non-relational databases
+   * Proficiency in at least one backend programming language (Python/Java/Scala)
+   * Experience with cloud data services and distributed systems
+* Preferred Qualifications
+   * Experience with real-time stream processing (Kafka Streams, Spark Streaming)
+   * Knowledge of Data Mesh or Data Contract architectures
+   * Certification in Cloud Data Engineering (AWS Certified Data Engineer or similar)
+   * Experience with containerization (Docker, Kubernetes) for data services
+* Key Deliverables
+   * Scalable, production-ready ETL/ELT pipelines and automated workflows
+   * Optimized data warehouse schemas and centralized data lakes
+   * High-quality, cleaned datasets ready for analytical and ML consumption
+   * Monitoring systems and alerts for data pipeline health and performance
+________________
+
+
+1.2.3 Big Data Architect
+* Job Title Big Data Architect / Enterprise Data Architect
+* Professional Summary A strategic architect responsible for the high-level design and roadmap of an organization’s entire data ecosystem. Expert in selecting the right technology stack to handle petabyte-scale data, ensuring that the architecture is scalable, fault-tolerant, and aligned with long-term business goals. Focuses on the integration of heterogeneous data sources into a unified, high-performance platform.
+* Core Purpose To design the blueprint for large-scale distributed systems that enable the storage, processing, and analysis of massive datasets at enterprise scale.
+* Key Responsibilities
+   * Define the enterprise-wide data strategy and architectural standards for big data systems
+   * Design end-to-end data architectures that support both batch and real-time processing requirements
+   * Evaluate and select technology stacks (Cloud vs. On-Prem, SQL vs. NoSQL, Spark vs. Flink)
+   * Design high-level blueprints for data lakes, lakehouses, and distributed processing clusters
+   * Ensure the scalability, reliability, and security of the data platform through robust architectural patterns
+   * Lead the migration of legacy data systems to modern, cloud-native big data platforms
+   * Establish standards for data modeling, metadata management, and data lineage across the organization
+   * Collaborate with executive leadership to align data architecture with business growth and digital transformation
+   * Oversee the implementation of disaster recovery and high-availability strategies for critical data assets
+   * Provide technical leadership and mentorship to data engineers and developers
+   * Conduct proofs-of-concept (PoC) for emerging technologies like Vector Databases or Graph Databases
+   * Optimize the total cost of ownership (TCO) for data infrastructure through efficient architectural design
+* Technical Skills
+   * Architectural Patterns Lambda/Kappa Architectures, Data Lakehouse, Microservices, Event-Driven Design
+   * Cloud Ecosystems AWS (EMR, Lake Formation), GCP (Dataproc, BigQuery), Azure (Synapse)
+   * Distributed Systems Hadoop, Spark, Cassandra, ElasticSearch, Presto/Trino
+   * Data Modeling ER Modeling, Dimensional Modeling (Star/Snowflake), Data Vault
+   * Security & Governance IAM, Encryption, Kerberos, Apache Ranger/Atlas
+   * DevOps/IaC Terraform, Kubernetes, Ansible
+   * Strategy Tools TOGAF, Data Modeling tools (Erwin, Lucidchart)
+* Qualifications
+   * Master’s or Bachelor’s degree in Computer Science, Systems Architecture, or a related field
+   * 8+ years of experience in data engineering and architecture with at least 3 years in a lead role
+   * Proven track record of designing and deploying petabyte-scale data systems
+   * Deep knowledge of distributed computing principles and cloud-native services
+   * Exceptional stakeholder management and strategic planning skills
+* Preferred Qualifications
+   * Experience in high-growth tech environments or large-scale e-commerce
+   * Advanced certifications in Enterprise Architecture or Cloud Architecture
+   * Strong understanding of AI/ML infrastructure requirements (Feature Stores, Model Registries)
+   * Experience with global data distribution and multi-region architectures
+* Key Deliverables
+   * Enterprise data architecture blueprints and technology roadmaps
+   * Standardized data modeling and integration frameworks
+   * Successful deployment of scalable, unified data platforms
+   * Strategic recommendations for infrastructure cost optimization and scaling
+________________
+
+
+1.2.4 Business Intelligence (BI) Analyst
+* Job Title Business Intelligence (BI) Analyst / Analytics Lead
+* Professional Summary A data-driven professional focused on bridging the gap between raw data and business strategy. Expert in data visualization, KPI tracking, and performance analysis. Responsible for creating intuitive dashboards and reports that empower business leaders to make informed, evidence-based decisions. Skilled in SQL and modern BI tools to deliver high-impact visual storytelling.
+* Core Purpose To provide clear, visual, and actionable insights into historical and current business performance to guide daily and strategic decision-making.
+* Key Responsibilities
+   * Develop and maintain interactive dashboards and reports using tools like Tableau, PowerBI, or Looker
+   * Query large databases using SQL to extract and manipulate data for ad-hoc analysis
+   * Define and track key performance indicators (KPIs) across different departments (Sales, Marketing, Product)
+   * Perform trend analysis to identify business growth areas, operational bottlenecks, or market shifts
+   * Collaborate with business stakeholders to understand their requirements and translate them into data visuals
+   * Ensure the accuracy and consistency of data across all reports and dashboards
+   * Automate recurring reporting processes to improve efficiency and reduce manual errors
+   * Conduct root-cause analysis for changes in business metrics and present findings to management
+   * Manage the BI tool environment, including user access, data permissions, and folder structures
+   * Train non-technical users on how to use BI tools and interpret data visualizations
+   * Work with data engineers to define the requirements for BI-ready data models and tables
+   * Stay current with industry trends in data visualization and self-service analytics
+* Technical Skills
+   * Visualization Tools Tableau, PowerBI, Looker, QlikView, Google Looker Studio
+   * Database & Querying SQL (Advanced), MySQL, PostgreSQL, BigQuery, Snowflake
+   * Data Analysis Excel (VBA/Power Query), Basic Python/R for data cleaning
+   * Analytics Concepts Cohort Analysis, Funnel Analysis, A/B Testing Visualization, Trend Analysis
+   * Data Modeling Star Schema, Snowflake Schema, dbt (data build tool)
+   * Soft Skills Data Storytelling, Presentation, Stakeholder Management
+* Qualifications
+   * Bachelor’s degree in Business, Finance, Computer Science, Economics, or a related field
+   * Strong proficiency in SQL and extensive experience with at least one major BI tool (Tableau/PowerBI)
+   * Ability to translate business questions into technical data requirements
+   * Strong analytical and problem-solving mindset with high attention to detail
+   * Excellent communication skills for presenting data to executive audiences
+* Preferred Qualifications
+   * Experience with dbt for managing analytics engineering workflows
+   * Knowledge of web analytics tools (Google Analytics, Mixpanel, Amplitude)
+   * Experience in a specific industry like E-commerce or FinTech
+   * Basic understanding of statistical analysis for business forecasting
+* Key Deliverables
+   * Interactive, executive-level dashboards and automated daily/weekly reports
+   * Documented KPI definitions and business logic for the organization
+   * Ad-hoc analytical deep-dives and root-cause analysis reports
+   * Clean, well-modeled data tables optimized for reporting (BI Layers)
+________________
+
+
+1.2.5 Data Governance Specialist
+* Job Title Data Governance Specialist / Data Quality Manager
+* Professional Summary A specialized professional dedicated to managing data as a strategic enterprise asset. Responsible for establishing the policies, standards, and processes that ensure data quality, security, and compliance. Expert in creating data catalogs, defining metadata standards, and enforcing data privacy regulations. Works at the intersection of IT, Legal, and Business to maintain the integrity of the data ecosystem.
+* Core Purpose To ensure the availability, integrity, security, and high quality of an organization’s data through rigorous policy enforcement and standardization.
+* Key Responsibilities
+   * Develop and implement a data governance framework, including policies, roles, and standards
+   * Establish and monitor data quality metrics (accuracy, completeness, consistency, timeliness)
+   * Define and maintain the enterprise data catalog and business glossary to ensure a "single version of truth"
+   * Manage metadata and data lineage to track the origin and transformation of critical data assets
+   * Ensure compliance with global data privacy regulations (GDPR, CCPA, HIPAA) in collaboration with Legal
+   * Lead the "Data Stewardship" program by working with department leads to assign data owners
+   * Conduct data sensitivity classification and manage access control policies for restricted data
+   * Audit data management practices and report on governance maturity to senior leadership
+   * Facilitate data-related conflict resolution between different business units
+   * Drive data literacy initiatives to ensure employees understand data policies and ethical usage
+   * Collaborate with data engineers to implement data quality firewalls and automated profiling tools
+   * Manage Master Data Management (MDM) processes to synchronize core business data across systems
+* Technical Skills
+   * Governance Tools Collibra, Informatica Axon, Alation, Apache Atlas
+   * Data Quality Tools Great Expectations, Talend, Informatica Data Quality
+   * Compliance Knowledge GDPR, CCPA, SOC2, HIPAA, Data Privacy Impact Assessments (DPIA)
+   * Data Management Master Data Management (MDM), Metadata Management, Data Lineage
+   * Analysis & Database SQL (Intermediate), Data Profiling, Excel (Advanced)
+   * Soft Skills Policy Writing, Auditing, Influence without Authority, Communication
+* Qualifications
+   * Bachelor’s degree in Information Management, Business Administration, Computer Science, or a related field
+   * Proven experience in data governance, data quality management, or IT auditing
+   * Strong understanding of data management principles and the DAMA-DMBOK framework
+   * Familiarity with data privacy laws and ethical data usage standards
+   * Excellent organizational and documentation skills
+* Preferred Qualifications
+   * Certified Data Management Professional (CDMP) or CIPP certification
+   * Experience implementing data governance in a cloud-first environment
+   * Knowledge of the technical aspects of data security (encryption, masking, tokenization)
+   * Experience with project management methodologies (Agile/Waterfall)
+* Key Deliverables
+   * Enterprise-wide data governance policies and standard operating procedures (SOPs)
+   * Up-to-date Data Catalog and Business Glossary
+   * Data Quality scorecards and monthly compliance audit reports
+   * Documented data lineage for all critical business reporting pipelines

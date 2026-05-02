@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@800&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   CORPORATE MODERN — CSS Design Tokens
+   ============================================ */
+@layer base {
+  :root {
+    /* Backgrounds */
+    --color-bg:           #FFFFFF;
+    --color-bg-section:   #F8FAFC;
+
+    /* Accents */
+    --color-accent:       #2563EB;
+    --color-accent-hover: #1D4ED8;
+    --color-secondary:    #0D9488;
+
+    /* Text */
+    --color-heading:      #0F172A;
+    --color-body:         #334155;
+    --color-muted:        #64748B;
+
+    /* Borders */
+    --color-border:       #E2E8F0;
+
+    /* CTA */
+    --color-cta-bg:       #2563EB;
+    --color-cta-text:     #FFFFFF;
+    --color-cta-hover:    #1D4ED8;
+  }
+
+  .dark {
+    /* Backgrounds */
+    --color-bg:           #0F172A;
+    --color-bg-section:   #1E293B;
+
+    /* Accents */
+    --color-accent:       #3B82F6;
+    --color-accent-hover: #1D4ED8;
+    --color-secondary:    #14B8A6;
+
+    /* Text */
+    --color-heading:      #F8FAFC;
+    --color-body:         #CBD5E1;
+    --color-muted:        #64748B;
+
+    /* Borders */
+    --color-border:       #334155;
+
+    /* CTA */
+    --color-cta-bg:       #2563EB;
+    --color-cta-text:     #FFFFFF;
+    --color-cta-hover:    #1D4ED8;
+  }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  font-size: 16px;
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  line-height: 1.2;
+}
+
+/* Font-display is now handled by Tailwind configuration */
+
+/* ============================================
+   REUSABLE UTILITIES
+   ============================================ */
+
+/* Primary Accent (Blue) */
+.text-primary {
+  color: var(--color-accent);
+}
+
+.bg-primary {
+  background-color: var(--color-accent);
+}
+
+/* CTA Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-cta-bg);
+  color: var(--color-cta-text);
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 20px 50px -10px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-cta-hover);
+}
+
+/* Outline Button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-body);
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-bg-section);
+}
+
+/* Glass Utilities */
+.glass {
+  background-color: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.dark .glass {
+  background-color: rgba(15,23,42,0.7);
+}
+
+.glass-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s;
+}
+
+.glass-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,81 @@
+﻿I. Artificial Intelligence & Machine Learning
+* 1.1.1 AI/ML Engineer
+* 1.1.2 Generative AI Engineer
+* 1.1.3 NLP (Natural Language Processing) Specialist
+* 1.1.4 Computer Vision Engineer
+* 1.1.5 AI Ethics & Compliance Officer
+* 1.1.6 AI Product Manager
+* 1.1.7 Machine Learning Scientist
+* 1.1.8 Robotics Engineer
+________________
+II. Data Science & Big Data
+* 1.2.1 Data Scientist
+* 1.2.2 Data Engineer
+* 1.2.3 Big Data Architect
+* 1.2.4 Business Intelligence (BI) Analyst
+* 1.2.5 Data Governance Specialist
+________________
+III. Software Engineering & Development
+* 1.3.1 Full-Stack Developer
+* 1.3.2 Backend Engineer
+* 1.3.3 Frontend Engineer
+* 1.3.4 Mobile App Developer
+* 1.3.5 Blockchain Developer
+* 1.3.6 Embedded Systems Engineer
+* 1.3.7 Game Developer
+________________
+IV. Cloud, DevOps & Infrastructure
+* 1.4.1 Cloud Solutions Architect
+* 1.4.2 DevOps Engineer
+* 1.4.3 Site Reliability Engineer (SRE)
+* 1.4.4 Platform Engineer
+* 1.4.5 FinOps Specialist
+________________
+V. Cybersecurity & Trust
+* 1.5.1 Cybersecurity Analyst
+* 1.5.2 Ethical Hacker (Penetration Tester)
+* 1.5.3 Application Security Engineer
+________________
+VI. Experience & Strategy
+* 1.6.1 UI/UX Designer
+* 1.6.2 IT Project Manager
+
+
+
+
+I. Artificial Intelligence & Machine Learning
+1. AI/ML Engineer: Designs and deploys the models that power intelligent systems.
+2. Generative AI Engineer: Specializes in Large Language Models (LLMs) and RAG architecture.
+3. NLP (Natural Language Processing) Specialist: Focuses on human-computer language interaction.
+4. Computer Vision Engineer: Develops systems that interpret visual data (used in medical imaging/self-driving cars).
+5. AI Ethics & Compliance Officer: Ensures AI models are unbiased and follow global regulations.
+6. AI Product Manager: Translates AI capabilities into marketable business features.
+7. Machine Learning Scientist: Conducts advanced research to create new ML algorithms.
+8. Robotics Engineer: Integrates AI with physical hardware for automation and manufacturing.
+II. Data Science & Big Data
+9. Data Scientist: Uses advanced statistics and ML to find patterns in complex datasets.
+10. Data Engineer: Builds the heavy-duty pipelines that move and clean raw data.
+11. Big Data Architect: Designs large-scale distributed systems to store massive amounts of information.
+12. Business Intelligence (BI) Analyst: Visualizes data to help executives make strategic decisions.
+13. Data Governance Specialist: Manages data privacy, quality, and organizational standards.
+III. Software Engineering & Development
+14. Full-Stack Developer: Proficient in both frontend (user interface) and backend (logic/databases).
+15. Backend Engineer: Focuses on server-side architecture, APIs, and performance.
+16. Frontend Engineer: Specializes in creating responsive, high-performance user interfaces.
+17. Mobile App Developer: Builds native or cross-platform apps for iOS and Android.
+18. Blockchain Developer: Develops decentralized applications (DApps) and smart contracts.
+19. Embedded Systems Engineer: Writes low-level code for hardware devices and IoT sensors.
+20. Game Developer: Uses engines like Unity or Unreal to build interactive experiences.
+IV. Cloud, DevOps & Infrastructure
+21. Cloud Solutions Architect: Designs the overall cloud strategy and infrastructure for an organization.
+22. DevOps Engineer: Automates the software delivery pipeline (CI/CD) and improves deployment speed.
+23. Site Reliability Engineer (SRE): Uses software engineering to solve infrastructure and operations problems.
+24. Platform Engineer: Builds the internal platforms that other developers use to be productive.
+25. FinOps Specialist: A hybrid role managing the financial optimization of cloud spending.
+V. Cybersecurity & Trust
+26. Cybersecurity Analyst: Monitors and defends networks against real-time threats.
+27. Ethical Hacker (Penetration Tester): Proactively attacks systems to find and fix vulnerabilities.
+28. Application Security Engineer: Ensures that security is built into the software code itself.
+VI. Experience & Strategy
+29. UI/UX Designer: Researches and designs the flow and look of digital products.
+30. IT Project Manager: Oversees technical teams to ensure projects are delivered on time and within budget.

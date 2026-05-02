@@ -1,0 +1,291 @@
+﻿1.3.1 Full-Stack Developer
+* Job Title Full-Stack Developer / Full-Stack Software Engineer
+* Professional Summary A highly versatile engineer proficient in both client-side and server-side development. Expert in building end-to-end web applications, from designing interactive user interfaces to architecting robust backend logic and managing databases. Skilled in modern JavaScript frameworks, API development, and cloud deployment, with a strong focus on application performance and scalability.
+* Core Purpose To design, develop, and maintain complete web applications by bridging the gap between user experience and server-side functionality.
+* Key Responsibilities
+   * Develop responsive and interactive frontend components using modern frameworks like React, Angular, or Vue.js
+   * Design and implement scalable server-side logic and RESTful or GraphQL APIs using Node.js, Python, or Java
+   * Architect and manage relational (PostgreSQL, MySQL) and non-relational (MongoDB, Redis) databases
+   * Build reusable code and libraries for future use while ensuring the technical feasibility of UI/UX designs
+   * Optimize applications for maximum speed, scalability, and cross-browser compatibility
+   * Implement security and data protection measures across the entire application stack
+   * Integrate third-party services and payment gateways into the application ecosystem
+   * Collaborate with UI/UX designers to translate wireframes into high-quality code
+   * Manage application deployment and monitoring using Docker, Kubernetes, and CI/CD pipelines
+   * Conduct thorough unit testing, integration testing, and end-to-end testing to ensure code reliability
+   * Participate in Agile ceremonies, code reviews, and technical documentation
+   * Stay updated with emerging technologies and best practices in both frontend and backend domains
+* Technical Skills
+   * Frontend HTML5, CSS3 (SASS/Tailwind), JavaScript (ES6+), TypeScript, React/Next.js
+   * Backend Node.js, Express, Python (Django/FastAPI), Go, or Java (Spring Boot)
+   * Databases PostgreSQL, MySQL, MongoDB, Redis, Prisma ORM
+   * Tools & DevOps Git, Docker, Kubernetes, Jenkins, GitHub Actions
+   * APIs & Communication REST, GraphQL, WebSockets, gRPC
+   * Cloud AWS (Lambda, EC2, S3), Vercel, Firebase
+   * Core Concepts MVC Architecture, Microservices, State Management, JWT Authentication
+* Qualifications
+   * Bachelor’s or Master’s degree in Computer Science, Software Engineering, or a related field
+   * Proven experience in developing and deploying full-stack web applications
+   * Strong proficiency in modern JavaScript/TypeScript and at least one backend language
+   * Solid understanding of web security, performance optimization, and SEO principles
+* Preferred Qualifications
+   * Experience with Serverless architectures and Edge computing
+   * Knowledge of mobile-responsive design and Progressive Web Apps (PWA)
+   * Open-source contributions or a strong portfolio of personal projects
+* Key Deliverables
+   * Fully functional, end-to-end web applications and platforms
+   * Documented and secure API endpoints
+   * Optimized database schemas and efficient data retrieval layers
+   * High-performance, responsive user interfaces
+________________
+
+
+1.3.2 Backend Engineer
+* Job Title Backend Engineer / Server-Side Developer
+* Professional Summary A specialized engineer focused on the "server-side" of applications. Expert in building the core logic, database interactions, and APIs that power digital products. Skilled in designing high-performance architectures, ensuring system reliability, and handling complex data processing. Focuses on scalability, security, and seamless integration with frontend systems and third-party services.
+* Core Purpose To architect and build the robust server-side logic and infrastructure that ensures application stability, performance, and data integrity.
+* Key Responsibilities
+   * Design and implement scalable server-side architectures using microservices or monolithic patterns
+   * Develop and maintain high-performance APIs (REST, GraphQL) to support frontend and mobile clients
+   * Manage database design, optimization, and migration for large-scale data storage
+   * Implement complex business logic and computational algorithms to solve specific application needs
+   * Optimize server response times and handle high-concurrency traffic through caching and load balancing
+   * Ensure application security through robust authentication (OAuth2, OpenID) and authorization mechanisms
+   * Build and maintain background task processing systems using message queues (RabbitMQ, Kafka)
+   * Monitor server health and application performance using tools like New Relic, Datadog, or Prometheus
+   * Troubleshoot and resolve production issues, performance bottlenecks, and database deadlocks
+   * Collaborate with frontend engineers to define API contracts and data structures
+   * Automate deployment processes and maintain infrastructure using CI/CD and Docker
+   * Write clean, maintainable, and well-documented code following SOLID principles
+* Technical Skills
+   * Programming Python, Java, Go, Node.js, C#, Ruby
+   * Frameworks Django, Spring Boot, FastAPI, Express.js, .NET Core
+   * Databases & Caching PostgreSQL, MongoDB, Redis, Elasticsearch, DynamoDB
+   * Messaging & Streams RabbitMQ, Apache Kafka, Amazon SQS
+   * DevOps & Tools Docker, Kubernetes, Terraform, Git, Linux
+   * Security JWT, OAuth2, SSL/TLS, Encryption at rest/transit
+   * Core Concepts Concurrency, Microservices, API Design, System Design, ACID Properties
+* Qualifications
+   * Bachelor’s degree in Computer Science, Software Engineering, or a related field
+   * Strong proficiency in at least one major backend language (Java/Python/Go/Node)
+   * Solid understanding of relational and NoSQL database management
+   * Experience in designing and scaling distributed systems
+* Preferred Qualifications
+   * Experience with Event-Driven Architecture and Serverless computing
+   * Deep knowledge of networking protocols (TCP/IP, HTTP/S, gRPC)
+   * Familiarity with cloud-native development on AWS, Azure, or GCP
+* Key Deliverables
+   * Secure and performant API ecosystems
+   * Highly available and scalable server-side infrastructure
+   * Optimized database architectures and query layers
+   * Detailed technical documentation for backend services and APIs
+________________
+
+
+1.3.3 Frontend Engineer
+* Job Title Frontend Engineer / UI Developer
+* Professional Summary A creative and technical professional dedicated to building high-performance, responsive, and visually stunning user interfaces. Expert in modern JavaScript frameworks, CSS architecture, and web performance optimization. Responsible for translating design mockups into interactive code, ensuring a seamless and accessible experience for users across all devices and browsers.
+* Core Purpose To create intuitive, fast, and accessible digital interfaces that provide a superior user experience and drive engagement.
+* Key Responsibilities
+   * Develop and implement complex user interfaces using React, Vue.js, or Angular
+   * Build reusable UI components and maintain a consistent design system across the platform
+   * Optimize web applications for maximum speed, performance, and Core Web Vitals
+   * Ensure cross-browser compatibility and mobile-first responsiveness for all digital assets
+   * Implement state management logic using tools like Redux, Vuex, or React Context API
+   * Integrate frontend applications with backend APIs and handle data visualization
+   * Conduct accessibility audits (WCAG compliance) to ensure the product is usable by everyone
+   * Collaborate with UI/UX designers to refine user journeys and interactive prototypes
+   * Manage frontend build processes using Webpack, Vite, or Parcel
+   * Perform unit and integration testing using Jest, Cypress, or React Testing Library
+   * Monitor frontend performance and errors using tools like Sentry or LogRocket
+   * Stay current with the latest CSS techniques, JavaScript features, and browser APIs
+* Technical Skills
+   * Core Languages HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+), TypeScript
+   * Frameworks React, Next.js, Vue.js, Nuxt.js, Angular
+   * Styling Tools Tailwind CSS, SASS/LESS, Styled Components, CSS Modules
+   * State Management Redux Toolkit, Zustand, Pinia, TanStack Query
+   * Build & Test Vite, Webpack, Jest, Playwright, Cypress
+   * Tools Git, Chrome DevTools, Figma (for design handoff), Storybook
+   * Core Concepts DOM Manipulation, Client-Side Rendering vs. SSR, SEO, Web Accessibility
+* Qualifications
+   * Bachelor’s degree in Computer Science, Design, or a related field
+   * Strong portfolio demonstrating high-quality UI/UX implementation and web performance
+   * Mastery of modern CSS and JavaScript/TypeScript
+   * Experience with at least one major frontend framework (React/Vue/Angular)
+* Preferred Qualifications
+   * Experience with Three.js or WebGL for advanced 3D visualizations
+   * Knowledge of Jamstack architecture and Static Site Generation (SSG)
+   * Experience in UI/UX design or using design tools like Figma/Sketch
+* Key Deliverables
+   * High-performance, responsive, and accessible web interfaces
+   * Reusable UI component libraries and design systems
+   * Optimized frontend codebases with high SEO scores
+   * Integrated and interactive data visualizations
+________________
+
+
+1.3.4 Mobile App Developer
+* Job Title Mobile App Developer / iOS & Android Developer
+* Professional Summary A specialized developer focused on creating high-quality applications for mobile devices. Proficient in either native development (Swift/Kotlin) or cross-platform frameworks (Flutter/React Native). Responsible for the entire mobile lifecycle, from UI implementation and hardware integration to app store deployment, ensuring a smooth and responsive experience for mobile users.
+* Core Purpose To design and build engaging, high-performance mobile applications that leverage device-specific features to solve user problems.
+* Key Responsibilities
+   * Develop and maintain mobile applications for iOS and Android platforms
+   * Build native interfaces using Swift/SwiftUI (iOS) or Kotlin/Jetpack Compose (Android)
+   * Develop cross-platform apps using Flutter or React Native to optimize code sharing
+   * Integrate mobile apps with backend services via RESTful or GraphQL APIs
+   * Implement device-specific hardware features like GPS, Camera, Biometrics, and Push Notifications
+   * Optimize app performance, memory usage, and battery consumption for various devices
+   * Ensure mobile UI/UX follows platform-specific guidelines (Human Interface Guidelines/Material Design)
+   * Manage local data storage using SQLite, CoreData, or Room
+   * Implement offline-first capabilities and data synchronization logic
+   * Manage the app release process for Apple App Store and Google Play Store
+   * Conduct rigorous testing on physical devices and emulators/simulators
+   * Troubleshoot and fix mobile-specific bugs, crashes, and performance issues
+* Technical Skills
+   * Languages Swift, Kotlin, Java, Dart, JavaScript/TypeScript
+   * Frameworks Flutter, React Native, SwiftUI, Jetpack Compose
+   * Mobile Services Firebase (Auth/Firestore/Cloud Messaging), App Store Connect, Google Play Console
+   * Architecture MVVM, MVP, BLoC (for Flutter), Redux
+   * Databases SQLite, Realm, CoreData, Hive
+   * Tools Xcode, Android Studio, VS Code, Fastlane, Bitrise
+   * Core Concepts Mobile Security, Deep Linking, App Lifecycle, Adaptive Layouts
+* Qualifications
+   * Bachelor’s degree in Computer Science, Software Engineering, or a related field
+   * Proven experience in building and publishing apps on the App Store or Play Store
+   * Proficiency in at least one mobile development ecosystem (Native or Cross-platform)
+   * Strong understanding of mobile UI/UX principles and platform constraints
+* Preferred Qualifications
+   * Experience with mobile DevOps and CI/CD pipelines
+   * Knowledge of Bluetooth Low Energy (BLE) or IoT integration
+   * Experience with Augmented Reality (ARKit/ARCore) in mobile apps
+* Key Deliverables
+   * Published iOS and Android applications with high user ratings
+   * Smooth, responsive mobile user interfaces and transitions
+   * Secure and optimized mobile codebases
+   * Regular app updates and feature enhancements
+________________
+
+
+1.3.5 Blockchain Developer
+* Job Title Blockchain Developer / Smart Contract Engineer
+* Professional Summary A specialized engineer focused on decentralized technologies and distributed ledgers. Expert in developing secure smart contracts and decentralized applications (DApps). Responsible for architecting blockchain solutions, implementing cryptographic protocols, and ensuring the integrity and security of transactions on networks like Ethereum, Solana, or Hyperledger.
+* Core Purpose To build secure, transparent, and decentralized systems that enable trustless transactions and innovative Web3 solutions.
+* Key Responsibilities
+   * Design and develop secure smart contracts using Solidity, Rust, or Vyper
+   * Build decentralized applications (DApps) that interact with blockchain networks
+   * Architect end-to-end blockchain solutions, including consensus mechanisms and protocol design
+   * Conduct thorough security audits and formal verification of smart contracts to prevent exploits
+   * Integrate blockchain backends with web frontends using Web3.js or Ethers.js
+   * Develop and manage decentralized storage solutions (IPFS, Arweave)
+   * Optimize smart contracts for gas efficiency and transaction throughput
+   * Implement token standards (ERC-20, ERC-721, ERC-1155) for various use cases
+   * Build and maintain indexers and oracles to bridge on-chain and off-chain data
+   * Stay updated with the latest EIPs (Ethereum Improvement Proposals) and blockchain trends
+   * Participate in community governance and open-source blockchain projects
+   * Document smart contract logic and DApp architecture for transparency
+* Technical Skills
+   * Languages Solidity, Rust, Go, JavaScript/TypeScript, Vyper
+   * Blockchain Platforms Ethereum (EVM), Solana, Polkadot, Polygon, Hyperledger Fabric
+   * Tools & Frameworks Hardhat, Foundry, Truffle, Brownie, Anchor (for Solana)
+   * Libraries Web3.js, Ethers.js, OpenZeppelin (Secure Contracts)
+   * Decentralized Services IPFS, The Graph, Chainlink (Oracles), MetaMask integration
+   * Security Slither, MythX, Echidna, Gas Optimization
+   * Core Concepts Cryptography (Hashing, Digital Signatures), Consensus (PoW/PoS), DAOs, DeFi, NFTs
+* Qualifications
+   * Bachelor’s degree in Computer Science, Mathematics, or a related field
+   * Strong experience in developing and deploying smart contracts on mainnet or testnet
+   * Deep understanding of cryptography and distributed systems
+   * Proficiency in at least one blockchain-specific language (Solidity/Rust)
+* Preferred Qualifications
+   * Experience with Zero-Knowledge Proofs (ZKP) and Layer 2 scaling solutions
+   * Knowledge of financial engineering or GameFi mechanics
+   * Experience with Rust and the Solana ecosystem
+* Key Deliverables
+   * Secure, audited, and deployed smart contracts
+   * Functional Decentralized Applications (DApps)
+   * Scalable blockchain protocols and token ecosystems
+   * Gas-optimized on-chain logic
+________________
+
+
+1.3.6 Embedded Systems Engineer
+* Job Title Embedded Systems Engineer / Firmware Developer
+* Professional Summary A multi-disciplinary engineer responsible for writing low-level software that controls physical hardware. Expert in C/C++ and Real-Time Operating Systems (RTOS), working with microcontrollers and IoT devices. Skilled in hardware-software integration, device drivers, and power optimization, ensuring that embedded systems are reliable, efficient, and performant.
+* Core Purpose To develop the "invisible" software that enables hardware devices to function, interact with sensors, and communicate in real-time.
+* Key Responsibilities
+   * Design and develop firmware for microcontrollers (ARM Cortex, ESP32, STM32)
+   * Write low-level device drivers for peripherals like sensors, displays, and communication modules
+   * Implement and optimize Real-Time Operating Systems (RTOS) like FreeRTOS or Zephyr
+   * Develop communication protocols for hardware interaction (I2C, SPI, UART, CAN, BLE)
+   * Optimize code for memory constraints, processing power, and low energy consumption
+   * Debug hardware-software interactions using oscilloscopes, logic analyzers, and JTAG debuggers
+   * Conduct hardware bring-up and verification for new PCB designs
+   * Implement security measures for IoT devices, including secure boot and encryption
+   * Develop bootloaders and over-the-air (OTA) update mechanisms for remote devices
+   * Collaborate with hardware engineers on component selection and system architecture
+   * Perform unit testing and hardware-in-the-loop (HIL) simulation
+   * Document firmware architectures, API interfaces, and hardware registers
+* Technical Skills
+   * Languages C, C++, Assembly, Python (for scripting/testing)
+   * Platforms & MCUs ARM Cortex-M, ESP32, AVR, PIC, STM32
+   * RTOS FreeRTOS, Zephyr, RT-Thread, Embedded Linux
+   * Protocols I2C, SPI, UART, CAN, USB, BLE, Wi-Fi, MQTT
+   * Tools GDB, J-Link, Keil, IAR, CMake, Logic Analyzers
+   * Core Concepts Interrupts, DMA, Timers, Memory Management, Power Sequencing
+   * Hardware Knowledge Schematic Reading, PCB Debugging, Sensor Integration
+* Qualifications
+   * Bachelor’s or Master’s degree in Electrical Engineering, Computer Engineering, or CS
+   * Strong proficiency in C and C++ for embedded systems
+   * Hands-on experience with microcontrollers and hardware debugging tools
+   * Deep understanding of real-time computing and hardware-software constraints
+* Preferred Qualifications
+   * Experience with Embedded Linux or Yocto Project
+   * Knowledge of TinyML (Machine Learning on edge devices)
+   * Experience in high-reliability industries (Medical, Automotive, Aerospace)
+* Key Deliverables
+   * Stable, production-ready firmware and device drivers
+   * Optimized real-time systems for specialized hardware
+   * Secure IoT communication and update protocols
+   * Comprehensive hardware-software integration documentation
+________________
+
+
+1.3.7 Game Developer
+* Job Title Game Developer / Gameplay Programmer
+* Professional Summary A creative and technical engineer responsible for building interactive digital experiences using game engines. Expert in C++ or C# and game physics, graphics, and AI. Skilled in translating game design documents into playable mechanics, optimizing performance for various platforms, and integrating art, sound, and animation into a cohesive experience.
+* Core Purpose To develop engaging, high-performance video games and simulations by combining technical logic with creative design.
+* Key Responsibilities
+   * Design and implement core gameplay mechanics, character controls, and physics
+   * Develop game logic using engines like Unity (C#) or Unreal Engine (C++/Blueprints)
+   * Create and optimize game AI for non-player characters (NPCs) and systems
+   * Integrate 3D/2D art assets, animations, and sound effects into the game engine
+   * Develop and maintain game UI systems and menus
+   * Optimize game performance (FPS, memory, loading times) for PC, Console, and Mobile
+   * Implement multiplayer networking and synchronization logic
+   * Build and maintain custom tools and pipelines for level designers and artists
+   * Conduct thorough debugging and profiling to resolve crashes and performance spikes
+   * Collaborate with Game Designers to iterate on gameplay feel and "juice"
+   * Implement platform-specific features (Controllers, Trophies, Touch controls)
+   * Stay updated with the latest rendering techniques and engine updates
+* Technical Skills
+   * Engines Unity, Unreal Engine, Godot, CryEngine
+   * Languages C++, C#, Blueprints, Python (for tooling)
+   * Graphics & Rendering Shaders (HLSL/GLSL), OpenGL, DirectX, Vulkan
+   * Math Linear Algebra, Vector Calculus, Trigonometry, Physics
+   * Tools Visual Studio, Git/Perforce, Blender (basics), Maya (basics)
+   * Specialized Systems NavMesh (AI), Physics Engines (PhysX/Havok), Particle Systems
+   * Core Concepts Game Loops, ECS (Entity Component System), Spatial Partitioning, Animation State Machines
+* Qualifications
+   * Bachelor’s degree in Computer Science, Game Development, or a related field
+   * Strong portfolio of games, prototypes, or engine-level projects
+   * Proficiency in C# (Unity) or C++ (Unreal)
+   * Solid understanding of game physics and mathematical foundations
+* Preferred Qualifications
+   * Experience with VR/AR development (Oculus, HoloLens)
+   * Knowledge of low-level graphics programming and shader development
+   * Experience with real-time networking for multiplayer games
+* Key Deliverables
+   * Playable game builds and prototypes
+   * Optimized gameplay systems and AI modules
+   * High-performance rendering and physics logic
+   * Custom game development tools and workflows

@@ -1,0 +1,78 @@
+﻿1.6.1 UI/UX Designer
+* Job Title UI/UX Designer / Product Designer
+* Professional Summary A user-centric designer responsible for the entire visual and experiential journey of a digital product. Expert in user research, wireframing, prototyping, and high-fidelity visual design. Skilled in translating complex user needs into intuitive and beautiful interfaces that balance business goals with a seamless user experience.
+* Core Purpose To create digital products that are easy to use, visually compelling, and provide high value to the user while achieving business objectives.
+* Key Responsibilities
+   * Conduct user research and interviews to understand user behavior and pain points
+   * Create user personas, journey maps, and empathy maps to guide design decisions
+   * Develop wireframes and low-fidelity prototypes to test information architecture
+   * Design high-fidelity user interfaces (UI) including layout, typography, and color schemes
+   * Create interactive prototypes for usability testing and stakeholder feedback
+   * Perform usability testing and iterate on designs based on data and user feedback
+   * Maintain and evolve the company’s "Design System" and component library
+   * Collaborate closely with frontend engineers to ensure high-quality design implementation
+   * Ensure designs follow accessibility standards (WCAG) across all devices
+   * Design for multiple platforms (Responsive Web, iOS, Android)
+   * Present design concepts and rationale to product managers and executives
+   * Analyze product analytics to identify areas for UX improvement
+* Technical Skills
+   * Design Tools Figma, Adobe XD, Sketch, Framer
+   * Prototyping InVision, ProtoPie, Figma Prototyping
+   * Research Tools UserTesting, Hotjar, Maze, Typeform
+   * Concepts Information Architecture, Interaction Design, Visual Design, Typography
+   * Development Knowledge Basic HTML/CSS, Box Model, Responsive Design principles
+   * Methodologies Design Thinking, Agile, User-Centered Design (UCD)
+* Qualifications
+   * Bachelor’s degree in Design, Human-Computer Interaction (HCI), or a related field
+   * Strong portfolio showcasing the end-to-end design process and final UI
+   * Proficiency in modern design and prototyping tools (specifically Figma)
+   * Exceptional eye for detail and understanding of visual hierarchy
+* Preferred Qualifications
+   * Experience with motion design and micro-interactions
+   * Knowledge of conversion rate optimization (CRO) and A/B testing
+   * Background in Psychology or Cognitive Science
+* Key Deliverables
+   * High-fidelity prototypes and final UI designs
+   * Documented Design System and component libraries
+   * User research reports and persona documents
+   * Usability testing summaries and iteration plans
+________________
+
+
+1.6.2 IT Project Manager
+* Job Title IT Project Manager / Technical Project Manager (TPM)
+* Professional Summary An organized and strategic leader responsible for overseeing the planning, execution, and delivery of complex technology projects. Expert in Agile and Waterfall methodologies, resource management, and stakeholder communication. Skilled in navigating technical challenges, managing budgets, and ensuring that teams stay on track to deliver high-quality products on time.
+* Core Purpose To ensure technical projects are completed within scope, budget, and time constraints while maintaining high standards of quality and stakeholder satisfaction.
+* Key Responsibilities
+   * Define project scope, goals, and deliverables in collaboration with stakeholders
+   * Develop detailed project plans, timelines, and resource allocation charts
+   * Lead cross-functional teams (Developers, Designers, QA) through the project lifecycle
+   * Facilitate Agile ceremonies (Daily Standups, Sprint Planning, Retrospectives)
+   * Manage project budgets and track spending against financial targets
+   * Identify, document, and mitigate project risks and bottlenecks
+   * Serve as the primary point of communication between technical teams and business leadership
+   * Manage third-party vendors and external consultants
+   * Ensure final deliverables meet quality standards and user requirements
+   * Manage project changes through formal change-control processes
+   * Prepare and present regular status reports to executive stakeholders
+   * Conduct "Post-Implementation Reviews" to identify lessons learned for future projects
+* Technical Skills
+   * Project Tools Jira, Confluence, Asana, Monday.com, Microsoft Project
+   * Methodologies Agile, Scrum, Kanban, Waterfall, Lean
+   * Business Tools Excel (Advanced), Slack, Zoom, G-Suite
+   * Technical Literacy Understanding of SDLC, Cloud Computing, and API concepts
+   * Reporting Gantt Charts, Burn-down Charts, Velocity tracking
+* Qualifications
+   * Bachelor’s degree in IT, Computer Science, or Business Administration
+   * Proven experience in managing software development or IT infrastructure projects
+   * Strong leadership, negotiation, and conflict-resolution skills
+   * Excellent written and verbal communication skills
+* Preferred Qualifications
+   * Certifications: PMP (Project Management Professional) or CSM (Certified Scrum Master)
+   * Technical background (former developer or engineer)
+   * Experience in a high-growth tech environment
+* Key Deliverables
+   * Comprehensive project charters and roadmaps
+   * Weekly project status reports and risk registers
+   * Successfully delivered technical products within budget and scope
+   * Project closure reports and post-mortem documentation
