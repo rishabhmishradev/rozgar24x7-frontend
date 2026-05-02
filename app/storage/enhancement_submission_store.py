@@ -70,8 +70,8 @@ class EnhancementSubmissionStore:
     @classmethod
     def from_env(cls) -> "EnhancementSubmissionStore":
         return cls(
-            bucket_name=os.getenv("ENHANCEMENT_UPLOADS_S3_BUCKET", _DEFAULT_S3_BUCKET),
-            table_name=os.getenv("ENHANCEMENT_UPLOADS_DDB_TABLE", _DEFAULT_DDB_TABLE),
+            bucket_name=os.getenv("ENHANCEMENT_UPLOADS_S3_BUCKET", ""),
+            table_name=os.getenv("ENHANCEMENT_UPLOADS_DDB_TABLE", ""),
             s3_prefix=os.getenv("ENHANCEMENT_UPLOADS_S3_PREFIX", _DEFAULT_S3_PREFIX),
             aws_region=os.getenv("AWS_REGION", _DEFAULT_AWS_REGION),
         )

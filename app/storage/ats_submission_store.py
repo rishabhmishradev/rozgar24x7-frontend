@@ -180,8 +180,8 @@ class AtsSubmissionStore:
     @classmethod
     def from_env(cls) -> "AtsSubmissionStore":
         return cls(
-            bucket_name=os.getenv("ATS_UPLOADS_S3_BUCKET", _DEFAULT_S3_BUCKET),
-            table_name=os.getenv("ATS_UPLOADS_DDB_TABLE", _DEFAULT_DDB_TABLE),
+            bucket_name=os.getenv("ATS_UPLOADS_S3_BUCKET", ""),
+            table_name=os.getenv("ATS_UPLOADS_DDB_TABLE", ""),
             s3_prefix=os.getenv("ATS_UPLOADS_S3_PREFIX", _DEFAULT_S3_PREFIX),
             aws_region=os.getenv("AWS_REGION", _DEFAULT_AWS_REGION),
         )
@@ -217,42 +217,51 @@ class AtsSubmissionStore:
         )
         resolved_content_type = _guess_content_type(safe_filename, content_type)
 
-        s3_client = self._create_s3_client()
-        with file_path.open("rb") as file_stream:
-            s3_client.upload_fileobj(
-                file_stream,
-                self.bucket_name,
-                object_key,
-                ExtraArgs={
-                    "ContentType": resolved_content_type,
-                    "ServerSideEncryption": "AES256",
-                },
+        try:
+            s3_client = self._create_s3_client()
+            with file_path.open("rb") as file_stream:
+                s3_client.upload_fileobj(
+                    file_stream,
+                    self.bucket_name,
+                    object_key,
+                    ExtraArgs={
+                        "ContentType": resolved_content_type,
+                        "ServerSideEncryption": "AES256",
+                    },
+                )
+
+            resume_link = _build_console_resume_link(self.bucket_name, object_key, self.aws_region)
+            table = self._create_dynamodb_resource().Table(self.table_name)
+            table.put_item(
+                Item=normalize_submission_item(
+                    {
+                        "submission_id": submission_id,
+                        "created_at": timestamp.isoformat(),
+                        "analysis_mode": "jd" if jd_text.strip() else "resume_only",
+                        "bucket_name": self.bucket_name,
+                        "job_description": jd_text.strip(),
+                        "job_role": target_role.strip(),
+                        "resume_link": resume_link,
+                        "source": source,
+                    },
+                    aws_region=self.aws_region,
+                )
             )
 
-        resume_link = _build_console_resume_link(self.bucket_name, object_key, self.aws_region)
-        table = self._create_dynamodb_resource().Table(self.table_name)
-        table.put_item(
-            Item=normalize_submission_item(
-                {
-                    "submission_id": submission_id,
-                    "created_at": timestamp.isoformat(),
-                    "analysis_mode": "jd" if jd_text.strip() else "resume_only",
-                    "bucket_name": self.bucket_name,
-                    "job_description": jd_text.strip(),
-                    "job_role": target_role.strip(),
-                    "resume_link": resume_link,
-                    "source": source,
-                },
-                aws_region=self.aws_region,
+            return StoredSubmission(
+                submission_id=submission_id,
+                bucket_name=self.bucket_name,
+                object_key=object_key,
+                resume_link=resume_link,
             )
-        )
-
-        return StoredSubmission(
-            submission_id=submission_id,
-            bucket_name=self.bucket_name,
-            object_key=object_key,
-            resume_link=resume_link,
-        )
+        except Exception as e:
+            logger.warning("Cloud storage upload failed (%s). Falling back to local storage.", e)
+            return self._persist_local_submission(
+                file_path=file_path,
+                original_filename=original_filename,
+                target_role=target_role,
+                jd_text=jd_text,
+            )
 
     def _persist_local_submission(
         self,
