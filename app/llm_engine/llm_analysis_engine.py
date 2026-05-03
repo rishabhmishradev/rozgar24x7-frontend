@@ -879,30 +879,44 @@ class LLMAnalysisEngine:
             "format_issues": rs.format_issues,
         })
 
-        bullet_result = self.client.analyze_resume(
-            PromptBuilder.build_bullet_improvements_prompt(
-                resume_data=reduced, jd_data=jd_data, ats_analysis=enriched
-            ),
-            required_keys={"bullet_improvements"},
-            defaults={"bullet_improvements": []},
-            key_types={"bullet_improvements": list},
-        )
-        skill_result = self.client.analyze_resume(
-            PromptBuilder.build_skill_suggestions_prompt(
-                resume_data=reduced, jd_data=jd_data, ats_analysis=enriched
-            ),
-            required_keys={"skill_suggestions"},
-            defaults={"skill_suggestions": []},
-            key_types={"skill_suggestions": list},
-        )
-        gap_result = self.client.analyze_resume(
-            PromptBuilder.build_gap_explanations_prompt(
-                resume_data=reduced, jd_data=jd_data, ats_analysis=enriched
-            ),
-            required_keys={"gap_explanations"},
-            defaults={"gap_explanations": []},
-            key_types={"gap_explanations": list},
-        )
+        try:
+            bullet_result = self.client.analyze_resume(
+                PromptBuilder.build_bullet_improvements_prompt(
+                    resume_data=reduced, jd_data=jd_data, ats_analysis=enriched
+                ),
+                required_keys={"bullet_improvements"},
+                defaults={"bullet_improvements": []},
+                key_types={"bullet_improvements": list},
+            )
+        except Exception as exc:
+            logger.warning("Bullet improvements LLM call failed: %s", exc)
+            bullet_result = {"bullet_improvements": []}
+
+        try:
+            skill_result = self.client.analyze_resume(
+                PromptBuilder.build_skill_suggestions_prompt(
+                    resume_data=reduced, jd_data=jd_data, ats_analysis=enriched
+                ),
+                required_keys={"skill_suggestions"},
+                defaults={"skill_suggestions": []},
+                key_types={"skill_suggestions": list},
+            )
+        except Exception as exc:
+            logger.warning("Skill suggestions LLM call failed: %s", exc)
+            skill_result = {"skill_suggestions": []}
+
+        try:
+            gap_result = self.client.analyze_resume(
+                PromptBuilder.build_gap_explanations_prompt(
+                    resume_data=reduced, jd_data=jd_data, ats_analysis=enriched
+                ),
+                required_keys={"gap_explanations"},
+                defaults={"gap_explanations": []},
+                key_types={"gap_explanations": list},
+            )
+        except Exception as exc:
+            logger.warning("Gap explanations LLM call failed: %s", exc)
+            gap_result = {"gap_explanations": []}
 
         return {
             "bullet_improvements": cast(
