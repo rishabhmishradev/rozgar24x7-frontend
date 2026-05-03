@@ -1402,6 +1402,10 @@ async def parse_resume_v1(
             filename=resume_file.filename or "resume",
             resume_analysis=parsed.to_dict(),
         )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Failed to parse resume: {exc}") from exc
     finally:
         if temp_path and temp_path.exists():
             temp_path.unlink(missing_ok=True)
