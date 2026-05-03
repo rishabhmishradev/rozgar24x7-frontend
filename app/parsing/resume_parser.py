@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable, cast
 
+from .document_validator import InvalidDocumentError, fast_validate_is_resume
 from .entity_extractor import extract_entities
 from .section_detector import detect_sections, detect_sections_with_confidence
 from .text_extractor import TextExtractor
@@ -69,10 +70,20 @@ class ResumeParser:
         path = Path(file_path)
         suffix = path.suffix.lower()
 
+        # Early validation: extract text cheaply and check if it looks like a resume.
+        # This runs BEFORE layout analysis, OCR, or any LLM calls.
+        text = self.text_extractor.extract(file_path)
+        is_resume, rejection_reason = fast_validate_is_resume(text)
+        if not is_resume:
+            logger.warning("Document rejected as non-resume: %s — %s", path.name, rejection_reason)
+            raise InvalidDocumentError(rejection_reason)
+
         # For PDF and DOCX: try the layout-aware pipeline first
         if suffix in (".pdf", ".docx"):
             try:
                 return self._parse_file_layout_aware(path, jd_context, enable_section_llm=enable_section_llm)
+            except InvalidDocumentError:
+                raise  # Never swallow document validation errors
             except Exception as exc:
                 logger.warning(
                     "Layout-aware pipeline failed for %s, falling back to text pipeline: %s",
@@ -81,7 +92,7 @@ class ResumeParser:
                 )
 
         # Fallback / original text-based pipeline for all formats
-        text = self.text_extractor.extract(file_path)
+        # Re-use the already extracted text instead of extracting again.
         return self.parse_text(text, jd_context=jd_context)
 
     def _parse_file_layout_aware(

@@ -30,6 +30,7 @@ from app.intelligence.skill_alignment import align_skills
 from app.intelligence.utils import flatten_experience_bullets
 from app.llm_engine.llm_analysis_engine import LLMAnalysisEngine
 from app.parsing.jd_parser import parse_job_description
+from app.parsing.document_validator import InvalidDocumentError
 from app.parsing.resume_parser import ParsingError, ResumeParser, SectionError
 from app.parsing.text_extractor import ExtractionError, UnsupportedFileTypeError
 from app.storage.ats_submission_store import AtsSubmissionStore, LocalStoredSubmission
@@ -188,6 +189,11 @@ async def section_handler(_request: Any, exc: SectionError) -> JSONResponse:
 @app.exception_handler(ParsingError)
 async def parsing_handler(_request: Any, exc: ParsingError) -> JSONResponse:
     return JSONResponse(status_code=422, content={"detail": str(exc)})
+
+
+@app.exception_handler(InvalidDocumentError)
+async def invalid_document_handler(_request: Any, exc: InvalidDocumentError) -> JSONResponse:
+    return JSONResponse(status_code=400, content={"detail": str(exc)})
 
 
 def _validate_extension(upload: UploadFile) -> str:
