@@ -387,8 +387,8 @@ class LayoutAwareResumeParser:
                     payload["child_skills"] = list(explicit_meta.get("child_skills", []))
                 skill_names = sorted(scored.keys())
             return scored, skill_names
-        except Exception:
-            logger.debug("Legacy _extract_skills unavailable; using lightweight fallback.")
+        except Exception as exc:
+            logger.debug("Legacy _extract_skills unavailable; using lightweight fallback: %s", exc)
 
         # Lightweight fallback
         found: set[str] = set(explicit_section_skills)
@@ -802,7 +802,8 @@ class LayoutAwareResumeParser:
             scores = matrix.toarray()[0]
             ranked = sorted(zip(feature_names, scores), key=lambda x: x[1], reverse=True)
             return [t for t, s in ranked if s > 0][:max_items]
-        except Exception:
+        except Exception as exc:
+            logger.debug("sklearn TF-IDF unavailable, using Counter fallback: %s", exc)
             from collections import Counter
             tokens = re.findall(r"[A-Za-z][A-Za-z+.#-]{2,}", text.lower())
             stopwords = {"and", "with", "from", "that", "this", "have", "will", "for", "the", "you", "are"}

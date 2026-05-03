@@ -159,7 +159,8 @@ def _extract_text_from_pdf_ocr(document: Any) -> str:
             text = str(image_to_string(image, lang="eng") or "").strip()
             if text:
                 pages.append(text)
-        except Exception:
+        except Exception as exc:
+            logger.debug("OCR extraction failed for page: %s", exc)
             continue
 
     return "\n".join(pages)

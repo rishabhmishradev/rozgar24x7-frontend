@@ -233,7 +233,8 @@ def _extract_noun_phrases(text: str) -> list[str]:
 
     try:
         nlp = spacy.load("en_core_web_sm")
-    except Exception:
+    except Exception as exc:
+        logger.debug("spaCy model load failed for noun phrase extraction: %s", exc)
         return []
 
     doc = nlp(text)
@@ -313,7 +314,8 @@ def _embedding_match_skills(
                     skill_name = skill_list[skill_index]
                     matches[skill_name] = max(matches.get(skill_name, 0.0), score_value)
         return matches
-    except Exception:
+    except Exception as exc:
+        logger.debug("Embedding skill matching failed: %s", exc)
         return {}
 
 
@@ -1385,7 +1387,8 @@ def _extract_keywords(text: str, max_items: int = 25) -> list[str]:
         ranked = sorted(zip(feature_names, scores), key=lambda item: item[1], reverse=True)
         keywords = [term for term, score in ranked if score > 0][:max_items]
         return keywords
-    except Exception:
+    except Exception as exc:
+        logger.debug("sklearn TF-IDF unavailable, using Counter fallback: %s", exc)
         tokens = re.findall(r"[A-Za-z][A-Za-z+.#-]{2,}", text.lower())
         filtered = [token for token in tokens if token not in STOPWORDS]
         counts = Counter(filtered)

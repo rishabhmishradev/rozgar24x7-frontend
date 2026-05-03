@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import ast
 import json
+import logging
 import re
 from typing import Any, Dict, Optional, cast
+
+logger = logging.getLogger(__name__)
 
 
 def dumps_compact_json(data: Any) -> str:
@@ -31,12 +34,12 @@ def parse_json_or_python_literal(text: str) -> Optional[Any]:
 
     try:
         return json.loads(candidate)
-    except Exception:
+    except (json.JSONDecodeError, ValueError):
         pass
 
     try:
         return ast.literal_eval(candidate)
-    except Exception:
+    except (ValueError, SyntaxError):
         return None
 
 
@@ -51,7 +54,7 @@ def extract_json_object(text: str) -> Optional[Dict[str, Any]]:
         parsed = json.loads(candidate)
         if isinstance(parsed, dict):
             return cast(Dict[str, Any], parsed)
-    except Exception:
+    except (json.JSONDecodeError, ValueError):
         pass
 
     # Substring extraction for fenced/chatty responses.
@@ -61,7 +64,7 @@ def extract_json_object(text: str) -> Optional[Dict[str, Any]]:
             parsed = json.loads(match.group(0))
             if isinstance(parsed, dict):
                 return cast(Dict[str, Any], parsed)
-        except Exception:
+        except (json.JSONDecodeError, ValueError):
             pass
 
     # Last resort: truncated JSON repair.
@@ -71,7 +74,7 @@ def extract_json_object(text: str) -> Optional[Dict[str, Any]]:
             parsed = json.loads(repaired)
             if isinstance(parsed, dict):
                 return cast(Dict[str, Any], parsed)
-        except Exception:
+        except (json.JSONDecodeError, ValueError):
             pass
 
     return None
@@ -92,7 +95,8 @@ def repair_truncated_json_object(text: str) -> Optional[str]:
         parsed = json.loads(candidate)
         if isinstance(parsed, dict):
             return candidate
-    except Exception:
+    except (json.JSONDecodeError, ValueError) as exc:
+        logger.debug("Bracket-balancing repair failed: %s", exc)
         pass
 
     if "}" in candidate:
@@ -101,7 +105,7 @@ def repair_truncated_json_object(text: str) -> Optional[str]:
             parsed = json.loads(trimmed)
             if isinstance(parsed, dict):
                 return trimmed
-        except Exception:
+        except (json.JSONDecodeError, ValueError):
             return None
 
     return None
