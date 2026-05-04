@@ -5,7 +5,7 @@ venv/
 env/
 .venv/
 bin/
-lib/
+/lib/
 share/
 
 # Environment variables
