@@ -26,7 +26,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple, cast
 import logging
 
 from app.llm_engine.prompt_builder import PromptBuilder
-from app.llm_engine.claude_client import ClaudeSonnetClient
+from app.llm_engine.gemini_client import GeminiAPIClient
 from app.llm_engine.base_client import BaseLLMClient
 from app.llm_engine.json_utils import dumps_pretty_json
 from app.intelligence.context_enrichment import enrich_jd_context
@@ -683,7 +683,7 @@ class LLMAnalysisEngine:
         client: Optional[BaseLLMClient] = None,
     ) -> None:
         self.client: BaseLLMClient = (
-            client if client is not None else ClaudeSonnetClient(api_key)
+            client if client is not None else GeminiAPIClient(api_key)
         )
 
     # ------------------------------------------------------------------
