@@ -357,7 +357,8 @@ Rules:
     try:
         response = str(generator(prompt)).strip()
         return parse_bullet_lines(response, list(original))
-    except Exception:
+    except Exception as exc:
+        logger.warning("LLM experience bullet improvement failed, using originals: %s", exc)
         return list(original)
 
 
@@ -391,7 +392,8 @@ Rules:
     try:
         response = str(generator(prompt)).strip()
         return parse_bullet_lines(response, list(original))
-    except Exception:
+    except Exception as exc:
+        logger.warning("LLM project bullet improvement failed, using originals: %s", exc)
         return list(original)
 
 
@@ -417,7 +419,8 @@ Return ONLY summary text.
     try:
         generated = _clean_text(generator(prompt))
         return generated if generated else _fallback_summary(resume_data)
-    except Exception:
+    except Exception as exc:
+        logger.warning("LLM summary generation failed, using fallback: %s", exc)
         return _fallback_summary(resume_data)
 
 

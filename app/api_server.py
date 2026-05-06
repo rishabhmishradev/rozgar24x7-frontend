@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any, Literal, cast
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
@@ -29,6 +30,7 @@ from app.intelligence.skill_alignment import align_skills
 from app.intelligence.utils import flatten_experience_bullets
 from app.llm_engine.llm_analysis_engine import LLMAnalysisEngine
 from app.parsing.jd_parser import parse_job_description
+from app.parsing.document_validator import InvalidDocumentError
 from app.parsing.resume_parser import ParsingError, ResumeParser, SectionError
 from app.parsing.text_extractor import ExtractionError, UnsupportedFileTypeError
 from app.storage.ats_submission_store import AtsSubmissionStore, LocalStoredSubmission
@@ -187,6 +189,11 @@ async def section_handler(_request: Any, exc: SectionError) -> JSONResponse:
 @app.exception_handler(ParsingError)
 async def parsing_handler(_request: Any, exc: ParsingError) -> JSONResponse:
     return JSONResponse(status_code=422, content={"detail": str(exc)})
+
+
+@app.exception_handler(InvalidDocumentError)
+async def invalid_document_handler(_request: Any, exc: InvalidDocumentError) -> JSONResponse:
+    return JSONResponse(status_code=400, content={"detail": str(exc)})
 
 
 def _validate_extension(upload: UploadFile) -> str:
@@ -1389,12 +1396,16 @@ async def parse_resume_v1(
 
     try:
         temp_path = await _write_upload_to_temp(resume_file, suffix)
-        parsed = parser.parse_file(temp_path, enable_section_llm=PARSER_SECTION_LLM_ENABLED)
+        parsed = await run_in_threadpool(parser.parse_file, temp_path, enable_section_llm=PARSER_SECTION_LLM_ENABLED)
         return ParseResumeResponse(
             ok=True,
             filename=resume_file.filename or "resume",
             resume_analysis=parsed.to_dict(),
         )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Failed to parse resume: {exc}") from exc
     finally:
         if temp_path and temp_path.exists():
             temp_path.unlink(missing_ok=True)
@@ -1416,7 +1427,8 @@ async def improve_submit_v1(
     try:
         temp_path = await _write_upload_to_temp(resume_file, suffix)
         store = EnhancementSubmissionStore.from_env()
-        stored = store.persist_submission(
+        stored = await run_in_threadpool(
+            store.persist_submission,
             file_path=temp_path,
             original_filename=resume_file.filename or f"resume{suffix}",
             content_type=resume_file.content_type,
@@ -1479,7 +1491,8 @@ async def analyze_ats_v1(
                 detail=f"Uploaded file is too large ({round(file_size / (1024 * 1024), 2)} MB). Max allowed: {max_upload_mb} MB.",
             )
 
-        jd_data = _build_scoring_jd_context(
+        jd_data = await run_in_threadpool(
+            _build_scoring_jd_context,
             effective_job_description,
             jd_texts,
             use_repo_jd_library=use_repo_jd_library,
@@ -1496,7 +1509,8 @@ async def analyze_ats_v1(
             _validate_jd_for_scoring(jd_data)
 
         parse_started = time.perf_counter()
-        parsed = parser.parse_file(
+        parsed = await run_in_threadpool(
+            parser.parse_file,
             temp_path,
             jd_context=jd_data,
             enable_section_llm=PARSER_SECTION_LLM_ENABLED,
@@ -1556,7 +1570,8 @@ async def analyze_ats_v1(
 
         decision, confidence, reasons, fail_reasons = _decision_payload(ats_analysis)
         score, percentile = _score_payload(ats_analysis)
-        stored_submission = AtsSubmissionStore.from_env().persist_submission(
+        stored_submission = await run_in_threadpool(
+            AtsSubmissionStore.from_env().persist_submission,
             file_path=temp_path,
             original_filename=resume_file.filename or f"resume{suffix}",
             content_type=resume_file.content_type,
@@ -1615,7 +1630,8 @@ async def fix_ats_with_ai_v1(
     parser = ResumeParser()
 
     try:
-        jd_data = _build_scoring_jd_context(
+        jd_data = await run_in_threadpool(
+            _build_scoring_jd_context,
             jd_text,
             jd_texts,
             use_repo_jd_library=use_repo_jd_library,
@@ -1624,7 +1640,8 @@ async def fix_ats_with_ai_v1(
             _validate_jd_for_scoring(jd_data)
 
         temp_path = await _write_upload_to_temp(resume_file, suffix)
-        parsed = parser.parse_file(
+        parsed = await run_in_threadpool(
+            parser.parse_file,
             temp_path,
             jd_context=jd_data,
             enable_section_llm=PARSER_SECTION_LLM_ENABLED,
@@ -1710,7 +1727,7 @@ async def fix_ats_with_ai_v1(
                     generation_input["target_role"] = inferred_role
 
         llm_engine = LLMAnalysisEngine(api_key=None)
-        generated = llm_engine.generate_resume(user_input=generation_input, jd_data=jd_data)
+        generated = await run_in_threadpool(llm_engine.generate_resume, user_input=generation_input, jd_data=jd_data)
         optimized_text = str(generated.get("resume_text", "") or "").strip()
         latex_source = str(generated.get("latex_source", "") or "")
         if not optimized_text:
@@ -1873,7 +1890,8 @@ async def analyze_full_v1(
             temp_jd_path = Path(jd_file.name)
 
         service = ResumeAnalysisService()
-        result = service.analyze_resume_against_jd(
+        result = await run_in_threadpool(
+            service.analyze_resume_against_jd,
             resume_path=str(temp_resume_path),
             jd_path=str(temp_jd_path),
             include_llm_recommendations=include_llm_recommendations,
